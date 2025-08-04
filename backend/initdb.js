@@ -6,10 +6,10 @@ const format = require('pg-format');
 
 initdb.get('/', async(req, res) => {
 
-    // Anlegen der Tabelle members
+    // Anlegen der Tabelle journal
     let query = `
-            DROP TABLE IF EXISTS members;
-            CREATE TABLE members(id serial PRIMARY KEY, firstname VARCHAR(50), lastname VARCHAR(50), email VARCHAR(50));
+            DROP TABLE IF EXISTS journal;
+            CREATE TABLE journal(id serial PRIMARY KEY, firstname VARCHAR(50), lastname VARCHAR(50), email VARCHAR(50));
             `;
 
     try {
@@ -19,7 +19,7 @@ initdb.get('/', async(req, res) => {
         console.log(err)
     }
 
-    // Befüllen der Tabelle members mit 50 Einträgen
+    // Befüllen der Tabelle journal mit 50 Einträgen
     const values = [
         ["Catherine", "Williams", "cwilliamsl@360.cn"],
         ["Adam", "Anderson", "aanderson8@google.fr"],
@@ -73,12 +73,12 @@ initdb.get('/', async(req, res) => {
         ["Eugene", "Williams", "ewilliamsi@deliciousdays.com"]
     ];
     // hierfuer muss pg-format installiert werden (wegen %L):
-    const paramquery = format('INSERT INTO members(firstname, lastname, email) VALUES %L RETURNING *', values);
+    const paramquery = format('INSERT INTO journal(firstname, lastname, email) VALUES %L RETURNING *', values);
 
 
     try {
         const result = await client.query(paramquery)
-        console.log("50 members inserted ...")
+        console.log("50 journal inserted ...")
         res.status(200)
         res.send(result.rows)
     } catch (err) {
