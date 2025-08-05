@@ -1,17 +1,29 @@
 h1 {
     font-family: Verdana, sans serif;
     font-weight: bold;
-    margin-top: 30px;
+    margin-top: 50px;
+    margin-left: 76px;
 }
 h4 {
     font-family: Verdana, sans serif;
     margin: 0;
     font-size:18px;
     margin-top: 13px;
+    margin-left: 76px;
 }
 .cat-img {
     width: 600px;
     height: auto;
     margin-top: -120px;
     position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.form-right {
+    position: absolute;
+    top: 50px;       
+    right: 40px;      
+    width: 300px;      
+    background: #F4A5DF;  
+    padding: 20px;     
 }
