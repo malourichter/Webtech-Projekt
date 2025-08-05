@@ -1,0 +1,10 @@
+.header{
+    font-weight: bold;
+    font-size: 28px;
+    font-family: Verdana, sans-serif;
+    background-color: #F4A5DF;
+    height: 60px;
+    line-height: 28px;
+    padding: 16px;
+    margin: 0;
+}
