@@ -1,28 +1,46 @@
 h1 {
-    font-family: Verdana, sans serif;
+    margin-top:20px;
+    font-family: 'Inter', sans-serif;
     font-weight: bold;
-    font-size: 42px;
+    font-size: 48px;
     
 }
 p {
-    font-family: Verdana, sans serif;
+    margin-top:10px;
+    font-family: 'Inter', sans-serif;
     margin: 0;
     font-size:18px;
     
 }
 .cat-img {
-    width: 350px;
+    width: 340px;
     height: auto;
-    position: fixed;
-    margin-right: 80px;
-    bottom: 0;
-    left: 0;
+    margin-left: 130px;
+    margin-top: 63px;
 }
-.form-right {
-    position: absolute;
-    top: 50px;       
-    right: 40px;      
-    width: 300px;      
+
+#email-input {
+    padding: 16px;
+    font-size: 16px;
+}
+
+#passwort-input {
+    padding: 16px;
+    font-size: 16px;
+}
+
+.card {
     background: #F4A5DF;  
-    padding: 20px;     
+    min-height: 580px;
+    border-radius: 30px;
+    padding: 20px;
+    margin-top: -30px;
 }
+
+button.btn-primary {
+  padding: 16px;  
+ background-color: #4422CC;
+ border: none;
+}
+
+form-row.
