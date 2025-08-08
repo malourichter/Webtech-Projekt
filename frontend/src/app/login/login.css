@@ -43,4 +43,9 @@ button.btn-primary {
  border: none;
 }
 
+.link-black {
+    color: black !important;
+    text-decoration: underline;
+}
+
 form-row.
