@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-mood',
@@ -6,6 +6,14 @@ import { Component } from '@angular/core';
   templateUrl: './mood.html',
   styleUrl: './mood.css'
 })
-export class Mood {
+export class Mood  implements OnInit {
+  datum: string = '';
+  uhrzeit: string = '';
 
+  ngOnInit() {
+    const now = new Date();
+    this.datum = now.toLocaleDateString('de-DE'); 
+    this.uhrzeit = now.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' }); 
+  }
 }
+

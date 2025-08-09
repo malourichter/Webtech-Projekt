@@ -3,7 +3,11 @@
     <h1> Willkommen zurück [Name]!</h1>
     <div class="card w-100 p-4">
         <p>Wie geht es dir?</p>
-        <p class="datum mt-3">Heute, [Datum], [Uhrzeit]</p>
+        <div class="datum mt-6 d-flex justify-content-center gap-2">
+         <span>Heute,</span>
+        <span>{{ datum }}</span>
+        <span>{{ uhrzeit }}</span>
+        </div>
     </div>
     </div>
 </div>
