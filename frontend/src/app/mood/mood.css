@@ -24,3 +24,18 @@ h1 {
     font-weight: normal;
    margin-top: -10px;
 }
+.hover-zoom{
+    transition: transform 0.3s ease;
+}
+.hover-zoom:hover {
+    transform: scale(1.1);
+}
+a {
+    padding: 30px;
+}
+.bild-beschriftung{
+    font-weight: bold;
+    font-size: 19px;
+    padding-top: 35px;
+    margin-left: 55px;
+}
