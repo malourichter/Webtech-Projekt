@@ -1,5 +1,5 @@
 h1 {
-    margin-top:20px;
+    margin-top:10px;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
     font-size: 48px;
@@ -13,10 +13,10 @@ p {
     
 }
 .cat-img {
-    width: 340px;
+    width: 390px;
     height: auto;
-    margin-left: 130px;
-    margin-top: 63px;
+    margin-left: 90px;
+    margin-top: 40px;
 }
 
 #email-input {
@@ -34,11 +34,11 @@ p {
     min-height: 580px;
     border-radius: 30px;
     padding: 20px;
-    margin-top: -30px;
+    margin-top: -27px;
     border: none;
 }
 
-button.btn-primary {
+#anmelden {
   padding: 16px;  
  background-color: #4422CC;
  border: none;
@@ -48,5 +48,3 @@ button.btn-primary {
     color: black !important;
     text-decoration: underline;
 }
-
-form-row.

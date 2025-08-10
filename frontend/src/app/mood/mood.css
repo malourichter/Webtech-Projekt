@@ -3,6 +3,7 @@
     background: #F1EDFF;
     border-radius: 30px;
     margin-top: -15px;
+    border:none;
 }
 p {
     font-family: Inter, sans serif;
@@ -35,7 +36,7 @@ a {
 }
 .bild-beschriftung{
     font-weight: bold;
-    font-size: 19px;
+    font-size: 18px;
     padding-top: 35px;
     margin-left: 55px;
 }
