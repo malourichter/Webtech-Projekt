@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-register',
@@ -7,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './register.css'
 })
 export class Register {
+  ngOnInit() {
+    document.body.style.overflow = 'hidden'; 
+  }
 
+  ngOnDestroy() {
+    document.body.style.overflow = '';   
+  }
 }

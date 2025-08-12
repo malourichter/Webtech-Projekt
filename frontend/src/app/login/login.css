@@ -2,8 +2,11 @@ h1 {
     margin-top:10px;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
-    font-size: 48px;
+    font-size: 55px;
     
+}
+.nowrap {
+    white-space: nowrap; 
 }
 p {
     margin-top:10px;
@@ -11,6 +14,11 @@ p {
     margin: 0;
     font-size:18px;
     
+}
+.beschreibung {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
 }
 .cat-img {
     width: 390px;
@@ -47,4 +55,25 @@ p {
 .link-black {
     color: black !important;
     text-decoration: underline;
+}
+.form1-bg {
+    position: absolute;
+    top: 85px;       
+    left: -20px;
+    width: 630px;     
+    height: auto;
+      z-index: -1;
+}
+.form2-bg {
+    position: absolute;
+    top: 260px;       
+    right: -20px;
+    width: 800px;     
+    height: auto;
+      z-index: -2;
+}
+.container {
+  padding-left: 60px;  
+  padding-right: 60px;
+  max-width: 100%; 
 }
