@@ -1,0 +1,54 @@
+.card {
+    background-color: #F1EDFF;
+    border: none;
+    box-shadow: 6px 6px rgba(0, 0, 0, 0.300);
+    min-height: auto;
+    border-radius: 30px;
+}
+h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    margin-left: 20px;
+}
+#gefuehle {
+    margin-top: 20px;
+    background-color: #FDFDFD;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.300);
+    min-height: 250px;
+}
+h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+}
+#schlaf {
+    margin-top: 20px;
+    background-color: #FDFDFD;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.300);
+    min-height: 250px;
+}
+#sozial {
+    margin-top: 20px;
+    background-color: #FDFDFD;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.300);
+    min-height: 250px;
+}
+#schule {
+    margin-top: 20px;
+    background-color: #FDFDFD;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.300);
+    min-height: 250px;
+}
+#hobbys {
+    margin-top: 20px;
+    background-color: #FDFDFD;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.300);
+    min-height: 250px;
+}
+a {
+    padding-top: 10px;
+    background-color: #4422CC;
+    color: white;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    border-radius: 30px;
+}

@@ -4,6 +4,7 @@
     border-radius: 30px;
     margin-top: -15px;
     border:none;
+    box-shadow: 6px 6px rgba(0, 0, 0, 0.300); 
 }
 p {
     font-family: Inter, sans serif;

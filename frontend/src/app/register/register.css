@@ -1,12 +1,12 @@
 h1 {
-    margin-top:10px;
+    margin-top:-20px;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
     font-size: 48px;
     
 }
 p {
-    margin-top:10px;
+    margin-top:-10px;
     font-family: 'Inter', sans-serif;
     margin: 0;
     font-size:18px;
@@ -42,8 +42,16 @@ p {
     border: none;
 }
 
-button.btn-primary {
-  padding: 16px;  
- background-color: #4422CC;
- border: none;
+#registrieren {
+    padding: 16px;  
+    background-color: #4422CC;
+    border: none;
+}
+#zurueck:hover {
+   background-color:#4422CC;
+   color: white; 
+}
+#zurueck{
+    color: black;
+    background-color: white;
 }
