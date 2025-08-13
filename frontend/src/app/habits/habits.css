@@ -1,9 +1,9 @@
 .card {
     background-color: #F1EDFF;
     border: none;
-    box-shadow: 6px 6px rgba(0, 0, 0, 0.300);
     min-height: auto;
     border-radius: 30px;
+    margin-bottom:20px;
 }
 h1 {
     font-family: 'Inter', sans-serif;
@@ -15,6 +15,35 @@ h1 {
     background-color: #FDFDFD;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.300);
     min-height: 250px;
+}
+#gefuehle-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#schlaf-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8rem;
+}
+#sozial-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6rem;
+}
+#schule-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6rem;
+}
+#hobbys-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
 }
 h2 {
     font-family: 'Inter', sans-serif;
@@ -51,4 +80,23 @@ a {
     font-weight: bold;
     font-family: 'Inter', sans-serif;
     border-radius: 30px;
+}
+.emoji{
+    text-align: center;
+}
+.emoji img {
+    width: 65px;
+    height: 65px;
+}
+.emoji-btn {
+    background: none;
+    border-radius: 50%;
+    border:none;
+    padding: 12px;
+    cursor: pointer;
+   text-align:center;
+}
+.emoji-btn:hover{
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    cursor: pointer;
 }

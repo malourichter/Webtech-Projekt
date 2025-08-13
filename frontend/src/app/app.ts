@@ -7,7 +7,7 @@ import { Register } from './register/register';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Login, Register, Footer,],
+  imports: [ RouterOutlet, Header, Login, Register, Footer,],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

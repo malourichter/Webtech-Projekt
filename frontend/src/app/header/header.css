@@ -1,10 +1,19 @@
 .header{
     font-weight: bold;
-    font-size: 28px;
-    font-family: Verdana, sans-serif;
+    font-size: 30px;
+    font-family: Inter, sans-serif;
     background-color: #F4A5DF;
-    height: 60px;
+    height: 50px;
     line-height: 28px;
     padding: 16px;
     margin: 0;
+}
+.logout-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.logout-icon {
+    width: 25px;
+    height: 25px;
 }
