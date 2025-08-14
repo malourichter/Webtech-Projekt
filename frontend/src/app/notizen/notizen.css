@@ -1,0 +1,42 @@
+h1{ 
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    margin-top: 10px;
+    margin-left: -20px;
+    padding: 25px;
+}
+.card { 
+    background-color: #F1EDFF;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 6px 6px rgba(0, 0, 0, 0.300);
+    min-height: 600px;
+}
+#textfeld {
+    background-color: #FFFFFF;
+    box-shadow: none;
+    min-height: 500px;
+    margin-top: 25px;
+}
+#notiz {
+    border: none;
+    height: 500px;
+    resize: none;
+}
+a {
+    padding-top: 10px;
+    background-color: #4422CC;
+    color: white;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    border-radius: 30px;
+}
+.headline-row {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+.cat-img {
+    height: auto;
+}
