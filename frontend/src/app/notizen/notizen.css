@@ -3,7 +3,8 @@ h1{
     font-weight: bold;
     font-size: 50px;
     margin-top: 10px;
-    margin-left: -20px;
+    margin-bottom: -30px;
+    margin-left: -10px;
     padding: 25px;
 }
 .card { 
@@ -11,17 +12,18 @@ h1{
     border: none;
     border-radius: 30px;
     box-shadow: 6px 6px rgba(0, 0, 0, 0.300);
-    min-height: 600px;
+    min-height: 330px;
 }
 #textfeld {
     background-color: #FFFFFF;
     box-shadow: none;
-    min-height: 500px;
-    margin-top: 25px;
+    min-height: 330px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 #notiz {
     border: none;
-    height: 500px;
+    height: 330px;
     resize: none;
 }
 a {
@@ -31,6 +33,7 @@ a {
     font-weight: bold;
     font-family: 'Inter', sans-serif;
     border-radius: 30px;
+    margin-bottom: 10px;
 }
 .headline-row {
     display: flex;
@@ -38,5 +41,8 @@ a {
     gap: 70px;
 }
 .cat-img {
+    max-width: 100%;
     height: auto;
+    width: 200px;
+    margin-left:50px;
 }

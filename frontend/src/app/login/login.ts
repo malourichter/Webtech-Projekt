@@ -7,14 +7,6 @@ import { Component,OnInit, OnDestroy  } from '@angular/core';
   templateUrl: './login.html',
   styleUrl: './login.css', })
   
-export class Login implements OnInit, OnDestroy{
-ngOnInit() {
-    document.body.style.overflow = 'hidden';  // Scrollen aus
-  }
+export class Login {}
 
-  ngOnDestroy() {
-    document.body.style.overflow = '';        // Scrollen wieder an
-  }
-
-}
  

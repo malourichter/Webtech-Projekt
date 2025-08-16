@@ -1,19 +1,30 @@
-.header{
-    font-weight: bold;
-    font-size: 30px;
-    font-family: Inter, sans-serif;
-    background-color: #F4A5DF;
-    height: 50px;
-    line-height: 28px;
-    padding: 16px;
-    margin: 0;
+.header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;          
+  background-color: #F4A5DF;         
+  min-height: 50px;              
+  box-sizing: border-box;       
+  overflow-x: hidden;            
 }
+
+.logo {
+  margin: 0;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: 'Inter', sans-serif;
+}
+
 .logout-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .logout-icon {
-    width: 25px;
-    height: 25px;
+  width: 25px;
+  height: 25px;
 }

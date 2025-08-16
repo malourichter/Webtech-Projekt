@@ -14,11 +14,6 @@ export class Mood  implements OnInit {
     const now = new Date();
     this.datum = now.toLocaleDateString('de-DE'); 
     this.uhrzeit = now.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' }); 
-    document.body.style.overflow = 'hidden';
-  }
-
-  ngOnDestroy() {
-    document.body.style.overflow = '';        // Scrollen wieder an
-  }
-}
+  
+}}
 
