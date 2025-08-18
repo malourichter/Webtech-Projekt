@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-habits',
+  selector: 'app-eintraege',
   imports: [RouterLink],
-  templateUrl: './habits.html',
-  styleUrl: './habits.css'
+  templateUrl: './eintraege.html',
+  styleUrl: './eintraege.css'
 })
-export class Habits {
+export class Eintraege {
 
 }

@@ -11,19 +11,15 @@ h1{
     background-color: #F1EDFF;
     border: none;
     border-radius: 30px;
-    box-shadow: 6px 6px rgba(0, 0, 0, 0.300);
-    min-height: 330px;
+   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 #textfeld {
     background-color: #FFFFFF;
     box-shadow: none;
-    min-height: 330px;
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 #notiz {
     border: none;
-    height: 330px;
+    height: 340px;
     resize: none;
 }
 a {
