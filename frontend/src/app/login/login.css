@@ -21,7 +21,7 @@ p {
     margin-top: 10px;
 }
 .cat-img {
-    position: relative;          
+    position: fixed;          
     bottom: 0;                   
     left: 150px;                 
     width: 400px;                
@@ -58,8 +58,8 @@ p {
 }
 .form1-bg {
     position: absolute;
-    top: 5vw;       
-    left: -2vw;
+    top: 80px;       
+    left: -50px;
    width: 50vw;    
     height: auto;
       z-index: -1;
@@ -78,10 +78,3 @@ p {
   max-width: 100%; 
 }
 
-header img {
-    display: block; /* Standard: Bild anzeigen */
-}
-
-body.login-page header img {
-    display: none; /* Auf Login-Seite ausblenden */
-}

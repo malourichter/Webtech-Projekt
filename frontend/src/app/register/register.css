@@ -29,8 +29,8 @@ p {
 
 .form1-bg {
     position: absolute;
-    top: 5vw;       
-    left: -2vw;
+    top: 80px;       
+    left: -50px;
    width: 50vw;    
     height: auto;
       z-index: -1;

@@ -3,9 +3,12 @@
   justify-content: space-between; 
   align-items: center;          
   background-color: #F4A5DF;         
-  min-height: 50px;              
   box-sizing: border-box;       
-  overflow-x: hidden;            
+ position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;         
 }
 
 .logo {
