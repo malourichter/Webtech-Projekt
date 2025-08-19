@@ -21,7 +21,7 @@ p {
     margin-top: 10px;
 }
 .cat-img {
-    position: absolute;          
+    position: relative;          
     bottom: 0;                   
     left: 150px;                 
     width: 400px;                
