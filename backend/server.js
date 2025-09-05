@@ -1,16 +1,24 @@
 const express = require('express');
-const cors = require('cors');
-require('dotenv').config();
 const routes = require('./routes');
-const init = require('./initdb');
+const mongoose = require('mongoose');
+require('dotenv').config();
 
 const app = express();
 const PORT = 3000;
 
 app.use(express.json());
-app.use(cors());
-app.use('/init', init);
 app.use('/', routes);
+
+// connect to mongoDB
+mongoose.connect(process.env.DB_CONNECTION, { dbName: process.env.DATABASE });
+mongoose.connect('mongodb+srv://dbUser:journal456@journal.iba5pu7.mongodb.net', { dbName: 'members' });
+const db = mongoose.connection;
+db.on('error', err => {
+  console.log(err);
+});
+db.once('open', () => {
+    console.log('connected to DB');
+});
 
 app.listen(PORT, (error) => {
     if (error) {

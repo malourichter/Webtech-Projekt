@@ -1,18 +1,19 @@
 {
   "name": "backend",
   "version": "1.0.0",
+  "description": "Backend REST-API",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "keywords": [
+    "restapi",
+    "backend"
+  ],
+  "author": "J. Freiheit",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^17.2.1",
     "express": "^5.1.0",
-    "pg": "^8.16.3",
-    "pg-format": "^1.0.4"
+    "mongoose": "^8.18.0"
   }
 }
