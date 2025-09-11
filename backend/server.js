@@ -2,15 +2,16 @@ const express = require('express');
 const routes = require('./routes');
 const mongoose = require('mongoose');
 require('dotenv').config();
+const cors = require("cors");
 
 const app = express();
 const PORT = 3000;
 
+app.use(cors());
 app.use(express.json());
 app.use('/', routes);
 
 // connect to mongoDB
-mongoose.connect(process.env.DB_CONNECTION, { dbName: process.env.DATABASE });
 mongoose.connect('mongodb+srv://dbUser:journal456@journal.iba5pu7.mongodb.net', { dbName: 'members' });
 const db = mongoose.connection;
 db.on('error', err => {

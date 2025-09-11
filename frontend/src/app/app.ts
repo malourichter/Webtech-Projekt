@@ -9,9 +9,10 @@ import { Habits } from './habits/habits';
 import { Notizen } from './notizen/notizen';
 import { Eintraege } from './eintraege/eintraege';  
 
+
 @Component({
   selector: 'app-root',
-  imports: [ RouterOutlet, Header, Login, Register, Footer, Mood, Habits, Notizen, Eintraege ],
+  imports: [ RouterOutlet, Header, Login, Register, Footer, Mood, Habits, Notizen, Eintraege],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
