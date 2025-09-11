@@ -96,6 +96,11 @@ a {
     cursor: pointer;
    text-align:center;
 }
+.emoji-btn.active{
+    background-color: #F1EDFF;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    
+}
 .emoji-btn:hover{
 box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     cursor: pointer;
