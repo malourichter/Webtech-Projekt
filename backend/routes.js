@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require("bcrypt");
-const User = require("../models/user.js");
+const User = require("./models/user.js");
 
 router.post("/register", async (req, res) => {
   try {
@@ -25,6 +25,17 @@ router.post("/register", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
   
+});
+
+// delete one member via id
+router.delete('/user/:id', async(req, res) => {
+    try {
+        await User.deleteOne({ _id: req.params.id }) // 'user' wurde zu 'User' geändert
+        res.status(204).send()
+    } catch {
+        res.status(404)
+        res.send({ error: "Member does not exist!" })
+    }
 });
 
 router.get('/user', async (req, res) => {
