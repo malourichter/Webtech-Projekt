@@ -10,6 +10,9 @@ app.use(cors());
 app.use(express.json());
 app.use('/', routes);
 
+const entryRoutes = require('./routes/entry');
+app.use('/entry', entryRoutes);
+
 // connect to mongoDB
 mongoose.connect('mongodb+srv://dbUser:journal456@journal.iba5pu7.mongodb.net', { dbName: 'members' });
 const db = mongoose.connection;

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const User = require("./models/user.js");
+const Entry = require("./models/entry.js");
 
 router.post("/register", async (req, res) => {
   try {
@@ -48,5 +49,6 @@ router.get('/user', async (req, res) => {
     res.status(500).json({ error: "Fehler beim Abrufen der Benutzer" });
   }
 });
+
 
 module.exports = router;
