@@ -1,6 +1,6 @@
 
     <div class="container col-md-9 mt-0 pt-0">
-        <h1> Willkommen zurück [Name]!</h1>
+        <h1 class="mb-2"> Willkommen {{ userName }}!</h1>
         <div class="card w-100 p-4">
             <p>Wie geht es dir?</p>
             <div class="datum mt-6 d-flex justify-content-center gap-2">
@@ -17,25 +17,25 @@
                         <p class="bild-beschriftung">Super</p>
                     </div>
                     <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a routerLink="/habits">
+                        <a routerLink="/habits"   (click)="selectMood('gut')">
                             <img src="/images/Gut.png" class="img-fluid hover-zoom" alt="Gut">
                         </a>
                         <p class="bild-beschriftung">Gut</p>
                     </div>
                     <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a routerLink="/habits">
+                        <a routerLink="/habits"   (click)="selectMood('okay')">
                             <img src="/images/Okay.png" class="img-fluid hover-zoom" alt="Okay">
                         </a>
                         <p class="bild-beschriftung">Okay</p>
                     </div>
                     <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a routerLink="/habits">
+                        <a routerLink="/habits" (click)="selectMood('schlecht')">
                             <img src="/images/Schlecht.png" class="img-fluid hover-zoom" alt="Schlecht">
                         </a>
                         <p class="bild-beschriftung">Schlecht</p>
                     </div>
                     <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a routerLink="/habits">
+                        <a routerLink="/habits" (click)="selectMood('furchtbar')">
                             <img src="/images/Furchtbar.png" class="img-fluid hover-zoom" alt="Furchtbar">
                         </a>
                         <p class="bild-beschriftung">Furchtbar</p>

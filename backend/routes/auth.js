@@ -17,7 +17,7 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ error: 'Falsches Passwort!' });
     }
     // Login erfolgreich
-    res.json({ user: { id: user._id, email: user.email } });
+    res.json({ user: { id: user._id, name: user.name, email: user.email } });
   } catch (err) {
     res.status(500).json({ error: 'Serverfehler!' });
   }

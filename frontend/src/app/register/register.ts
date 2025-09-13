@@ -30,8 +30,9 @@ name: string = '';
     })
     .then(res => res.json())
     .then(data => {
-      if (data.success) {
-        this.router.navigate(['/login']);
+      if (data.message) {
+        localStorage.setItem('userName', this.name);
+        this.router.navigate(['/mood']);
       } else {
         this.error = data.error || 'Registrierung fehlgeschlagen!';
       }

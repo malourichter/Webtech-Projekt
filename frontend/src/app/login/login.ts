@@ -25,6 +25,8 @@ export class Login {
     })
     .then(res => res.json())
     .then(data => {
+      console.log('Login-Response:', data);
+      localStorage.setItem('userName', data.user?.name); // Name speichern
       if (data.user && data.user.id) {
         localStorage.setItem('userId', data.user.id); // User-ID speichern
         this.router.navigate(['/mood']); // Weiterleiten

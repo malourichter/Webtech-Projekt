@@ -12,9 +12,11 @@ export class Mood  implements OnInit {
   uhrzeit: string = '';
   selectedMood: string = '';
   userId: string = '';
+  userName: string = '';
 
   ngOnInit() {
     const now = new Date();
+    this.userName = localStorage.getItem('userName') || '';
     this.datum = now.toLocaleDateString('de-DE'); 
     this.uhrzeit = now.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' }); 
   this.userId = localStorage.getItem('userId') || '';
