@@ -10,11 +10,32 @@ import { RouterLink } from '@angular/router';
 export class Mood  implements OnInit {
   datum: string = '';
   uhrzeit: string = '';
+  selectedMood: string = '';
+  userId: string = '';
 
   ngOnInit() {
     const now = new Date();
     this.datum = now.toLocaleDateString('de-DE'); 
     this.uhrzeit = now.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' }); 
-  
-}}
+  this.userId = localStorage.getItem('userId') || '';
+}
+ selectMood(mood: string) {
+    this.selectedMood = mood;
+  }
+
+  saveEntry() {
+    fetch('/entry', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        userId: this.userId,
+        mood: this.selectedMood,
+        datum: this.datum,
+        uhrzeit: this.uhrzeit
+      })
+    })
+    .then(res => res.json())
+    .then(data => console.log(data));
+  }
+}
 

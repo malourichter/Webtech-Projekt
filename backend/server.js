@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const cors = require('cors');
 
+
 const app = express();
 const PORT = 3000;
 app.use(cors());
@@ -13,7 +14,9 @@ app.use('/', routes);
 const entryRoutes = require('./routes/entry');
 app.use('/entry', entryRoutes);
 
-// connect to mongoDB
+const authRouter = require('./routes/auth');
+app.use('/auth', authRouter);
+
 mongoose.connect('mongodb+srv://dbUser:journal456@journal.iba5pu7.mongodb.net', { dbName: 'members' });
 const db = mongoose.connection;
 db.on('error', err => {

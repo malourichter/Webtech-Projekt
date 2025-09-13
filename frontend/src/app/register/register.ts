@@ -11,5 +11,33 @@ import { Router, RouterLink } from '@angular/router';
   styleUrls: ['./register.css']
 })
 export class Register {
+name: string = '';
+  email: string = '';
+  password: string = '';
+  error: string = '';
 
+  constructor(private router: Router) {}
+
+  registerUser() {
+    fetch('http://localhost:3000/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: this.name,
+        email: this.email,
+        password: this.password
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        this.router.navigate(['/login']);
+      } else {
+        this.error = data.error || 'Registrierung fehlgeschlagen!';
+      }
+    })
+    .catch(() => {
+      this.error = 'Serverfehler!';
+    });
+  }
 }

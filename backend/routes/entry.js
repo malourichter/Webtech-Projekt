@@ -24,7 +24,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-/* // delete one entry via id
+// delete one entry via id
 router.delete('/:id', async(req, res) => {
     try {
         await Entry.deleteOne({ _id: req.params.id })
@@ -33,6 +33,6 @@ router.delete('/:id', async(req, res) => {
         res.status(404)
         res.send({ error: "Entry does not exist!" })
     }
-}); */
+});
 
 module.exports = router;
