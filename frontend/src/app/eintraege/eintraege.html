@@ -5,11 +5,11 @@
         </div>
     <div class="card w-100 p-3" >
 <div *ngFor="let entry of entries" class="card mb-3 p-3">
-    <p><strong>Datum:</strong> {{ entry.datum | date:'short' }}</p>
-    <p><strong>Uhrzeit:</strong> {{ entry.uhrzeit }}</p>
-    <p><strong>Stimmung:</strong> {{ entry.mood?.name }}</p>
-    <p><strong>Habits:</strong> {{ entry.habits.join(', ') }}</p>
-    <p><strong>Notizen:</strong> {{ entry.notizen }}</p>
+      <strong>Datum:</strong> {{ entry.datum }}<br>
+      <strong>Mood:</strong> {{ entry.mood }}<br>
+      <strong>Habits:</strong> {{ entry.habits?.join(', ') }}<br>
+      <strong>Notizen:</strong> {{ entry.notizen }}
+      <hr>
   </div>
     </div>
     </div>

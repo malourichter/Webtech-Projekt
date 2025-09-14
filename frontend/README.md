@@ -1,59 +1,59 @@
-# Projekt
+# Journaly
+Journaly ist eine simple Tagebuch-Webanwendung für jeden, der sein tägliches Leben festhalten möchte. Benutzer:innen können nach erfolgreicher Registration Ihre Laune und Gewohnheiten überschaubar dokumentieren.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.0.
+## Mögliche Funktionen
+- Erstellung eines Nutzers
+- Tracking von Laune
+- Tracking von Gewohnheiten
+- Textfeld zum Erstellen von Notizen
+- strukturierte Übersicht von Einträgen
+  
+## Technologien
+- **Frontend:** Angular
+- **Backend:** Node.js
+- **Datenbank:** MongoDB(Atlas)
+- **CSS-Framework:** Bootstrap
+- **Deployment:**
 
-## Development server
 
-To start a local development server, run:
+## Screenshots der Anwendung
 
-```bash
-ng serve
-```
+**Start-/Loginpage**
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+![Start-/Loginpage](screenshots/startseite.png)
 
-## Code scaffolding
+**Registrierungspage**
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+![Registrierungspage](screenshots/registrierung.png)
 
-```bash
-ng generate component component-name
-```
+**Launen-Auswahl**
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+![Launenpage](screenshots/launen.png)
 
-```bash
-ng generate --help
-```
+**Gewohnheiten**
 
-## Building
+![Gewohnheiten](screenshots/gewohnheite1.png)
 
-To build the project run:
+![Gewohnheiten](screenshots/gewohnheiten2.png)
 
-```bash
-ng build
-```
+**Notiz-Feld**
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+![Notizen](screenshots/notizen.png)
 
-## Running unit tests
+**Übersicht der Einträge**
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+![Übersicht](screenshots/üebrsicht.png)
 
-```bash
-ng test
-```
+**Nutzung von KI**
+- benutzte KI-Tools: ChatGPT, GitHub Copilot  
 
-## Running end-to-end tests
+Die KI-Tools wurden ausschließlich bei Fragen bzw. Erläuterungen zum Code, sowie zur Code-Optimierung genutzt.
 
-For end-to-end (e2e) testing, run:
+# Installation & Setup
+**Vorraussetzungen**
+- Angular CLI
+- Node.js
+- Bootstrap
+- MongoDB Atlas Zugang  
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Projekt klonen**
