@@ -23,6 +23,7 @@ export class Mood  implements OnInit {
 }
  selectMood(mood: string) {
     this.selectedMood = mood;
+    localStorage.setItem('mood', mood);
   }
 
   saveEntry() {

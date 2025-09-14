@@ -1,6 +1,7 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-habits',
@@ -9,17 +10,26 @@ import { RouterLink } from '@angular/router';
   styleUrl: './habits.css'
 })
 export class Habits {
-activeEmojis = new Set<string>();
+  selectedHabits: string[] = [];
 
-toggleActive(emoji: string) {
-  if (this.activeEmojis.has(emoji)) {
-    this.activeEmojis.delete(emoji);
-  } else {
-    this.activeEmojis.add(emoji);
+  constructor(private router: Router) {}
+  toggleActive(habit: string) {
+    const index = this.selectedHabits.indexOf(habit);
+    if (index === -1) {
+      this.selectedHabits.push(habit);
+    } else {
+      this.selectedHabits.splice(index, 1);
+    }
   }
-}
 
-isActive(emoji: string): boolean {
-  return this.activeEmojis.has(emoji);
-}
+  isActive(habit: string): boolean {
+    return this.selectedHabits.includes(habit);
+  }
+
+  // Beim Klick auf "Weiter"
+  saveHabits() {
+    // Habits im LocalStorage speichern o. direkt an Backend schicken
+    localStorage.setItem('habits', JSON.stringify(this.selectedHabits));
+    this.router.navigate(['/notizen']);
+  }
 }
