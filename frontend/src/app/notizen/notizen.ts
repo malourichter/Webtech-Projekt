@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-notizen',
-  imports: [RouterLink, FormsModule],
+  imports: [FormsModule],
   templateUrl: './notizen.html',
   styleUrl: './notizen.css'
 })

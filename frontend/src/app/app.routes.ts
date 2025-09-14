@@ -9,6 +9,7 @@ import { Eintraege } from './eintraege/eintraege';
 
 export const routes: Routes = [
     { path: '', component: Login }, 
+    { path: 'login', component: Login },
     { path: 'register', component: Register },
     { path: 'mood', component: Mood},
     { path: 'habits', component: Habits},

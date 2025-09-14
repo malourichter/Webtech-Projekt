@@ -1,11 +1,10 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-habits',
-  imports: [RouterLink, NgClass],
+  imports: [NgClass],
   templateUrl: './habits.html',
   styleUrl: './habits.css'
 })
@@ -28,7 +27,7 @@ export class Habits {
 
   // Beim Klick auf "Weiter"
   saveHabits() {
-    // Habits im LocalStorage speichern o. direkt an Backend schicken
+    // Habits im LocalStorage speichern 
     localStorage.setItem('habits', JSON.stringify(this.selectedHabits));
     this.router.navigate(['/notizen']);
   }
