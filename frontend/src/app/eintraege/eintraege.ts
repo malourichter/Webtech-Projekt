@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-eintraege',
@@ -11,6 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class Eintraege implements OnInit {
   entries: any[] = [];
+  constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
     const userId = localStorage.getItem('userId');
@@ -24,6 +27,7 @@ export class Eintraege implements OnInit {
           }
           return entry.userId?.toString() === userId;
         });
+        this.cdr.detectChanges();
       });
   }
 }
