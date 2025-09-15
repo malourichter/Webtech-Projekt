@@ -25,9 +25,9 @@ export class Habits {
     return this.selectedHabits.includes(habit);
   }
 
-  // Beim Klick auf "Weiter"
+
   saveHabits() {
-    // Habits im LocalStorage speichern 
+   
     localStorage.setItem('habits', JSON.stringify(this.selectedHabits));
     this.router.navigate(['/notizen']);
   }

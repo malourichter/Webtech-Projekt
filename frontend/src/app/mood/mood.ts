@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-mood',
@@ -15,8 +14,6 @@ export class Mood implements OnInit {
   userId: string = '';
   userName: string = '';
 
-  constructor(private http: HttpClient) {}
-
   ngOnInit() {
     const now = new Date();
     this.userName = localStorage.getItem('name') || '';
@@ -28,22 +25,5 @@ export class Mood implements OnInit {
   selectMood(mood: string) {
     this.selectedMood = mood;
     localStorage.setItem('mood', mood);
-  }
-
-  saveEntry() {
-    const token = localStorage.getItem('token');
-    const headers = new HttpHeaders()
-      .set('Content-Type', 'application/json')
-      .set('Authorization', `Bearer ${token}`);
-
-    this.http.post<any>('http://localhost:3000/entry', {
-      userId: this.userId,
-      mood: this.selectedMood,
-      datum: this.datum,
-      uhrzeit: this.uhrzeit
-    }, { headers }).subscribe({
-      next: data => console.log(data),
-      error: err => console.error('Fehler beim Speichern:', err)
-    });
   }
 }
