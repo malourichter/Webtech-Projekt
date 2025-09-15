@@ -10,8 +10,9 @@ export class Header {
 constructor (private router: Router) {}
 
 logout() {
-  localStorage.removeItem('userName');
+  localStorage.removeItem('name');
   localStorage.removeItem('userId');
+  localStorage.removeItem('token');
   this.router.navigate(['/']);
 }
 }
