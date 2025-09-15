@@ -25,7 +25,7 @@ export class Habits {
     return this.selectedHabits.includes(habit);
   }
 
-// Habits im LocalStorage speichern
+
   saveHabits() {
    
     localStorage.setItem('habits', JSON.stringify(this.selectedHabits));
