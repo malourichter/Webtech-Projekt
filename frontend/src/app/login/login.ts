@@ -1,41 +1,43 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Router, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
-  standalone: true,
-  imports: [FormsModule, CommonModule, RouterLink],
   templateUrl: './login.html',
-  styleUrls: ['./login.css']
+  styleUrls: ['./login.css'],
+  standalone: true,
+  imports: [FormsModule, CommonModule, RouterLink]
 })
 export class Login {
- email: string = '';
+  email: string = '';
   password: string = '';
   error: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
-  loginUser() {
-    fetch('http://localhost:3000/auth/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: this.email, password: this.password })
-    })
-    .then(res => res.json())
-    .then(data => {
-      console.log('Login-Response:', data);
-      localStorage.setItem('userName', data.user?.name); // Name speichern
-      if (data.user && data.user.id) {
-        localStorage.setItem('userId', data.user.id); // User-ID speichern
-        this.router.navigate(['/mood']); // Weiterleiten
-      } else {
+
+  login() {
+   this.http.post<any>('http://localhost:3000/auth/login', {
+      email: this.email,
+      password: this.password
+    }).subscribe({
+      next: data => {
+        if (data.token) {
+          localStorage.setItem('token', data.token);
+          localStorage.setItem('userId', data.user.id);
+          localStorage.setItem('name', data.user.name);
+          this.router.navigate(['/mood']);
+        } else {
+          this.error = data.message || 'Login fehlgeschlagen!';
+        }
+      },
+      error: () => {
         this.error = 'Login fehlgeschlagen!';
       }
-    })
-    .catch(() => {
-      this.error = 'Serverfehler!';
     });
   }
 }

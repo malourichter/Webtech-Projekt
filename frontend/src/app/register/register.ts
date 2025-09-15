@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -16,29 +17,27 @@ name: string = '';
   password: string = '';
   error: string = '';
 
-  constructor(private router: Router) {}
+constructor(private http: HttpClient, private router: Router) {}
 
-  registerUser() {
-    fetch('http://localhost:3000/register', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name: this.name,
-        email: this.email,
-        password: this.password
-      })
-    })
-    .then(res => res.json())
-    .then(data => {
-      if (data.message) {
-        localStorage.setItem('userName', this.name);
-        this.router.navigate(['/mood']);
-      } else {
-        this.error = data.error || 'Registrierung fehlgeschlagen!';
+   registerUser() {
+    // Felder prüfen
+    if (!this.name || !this.email || !this.password) {
+      this.error = 'Bitte alle Felder ausfüllen!';
+      return;
+    }
+
+    this.http.post<any>('http://localhost:3000/register', {
+      name: this.name,
+      email: this.email,
+      password: this.password
+    }).subscribe({
+      next: data => {
+        this.error = '';
+        this.router.navigate(['/login']);
+      },
+      error: err => {
+        this.error = err.error?.message || 'Registrierung fehlgeschlagen!';
       }
-    })
-    .catch(() => {
-      this.error = 'Serverfehler!';
     });
   }
 }

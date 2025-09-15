@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-notizen',
-  imports: [RouterLink, FormsModule],
+  imports: [FormsModule],
   templateUrl: './notizen.html',
   styleUrl: './notizen.css'
 })
 export class Notizen {
   notiz: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private http: HttpClient) {}
 
   saveEntry() {
     const userId = localStorage.getItem('userId') || '';
@@ -21,25 +21,28 @@ export class Notizen {
     const datum = new Date();
     const uhrzeit = new Date().toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' });
 
-    fetch('http://localhost:3000/entry', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        userId,
-        mood,
-        habits,
-        notizen: this.notiz,
-        datum,
-        uhrzeit
-      })
-    })
-    .then(res => res.json())
-    .then(data => {
-     // LocalStorage leeren
-      localStorage.removeItem('mood');
-      localStorage.removeItem('habits');
-      localStorage.removeItem('notizen');
-      this.router.navigate(['/eintraege']);
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Authorization', `Bearer ${token}`);
+
+    this.http.post<any>('http://localhost:3000/entry', {
+      userId,
+      mood,
+      habits,
+      notizen: this.notiz,
+      datum,
+      uhrzeit
+    }, { headers }).subscribe({
+      next: () => {
+        localStorage.removeItem('mood');
+        localStorage.removeItem('habits');
+        localStorage.removeItem('notizen');
+        this.router.navigate(['/eintraege']);
+      },
+      error: () => {
+        
+      }
     });
   }
 }

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Entry = require('../models/entry');
 
-// neuen Eintrag erstellen
+// Eintrag erstellen
 router.post("/", async (req, res) => {
   try {
     console.log(req.body);
@@ -24,14 +24,13 @@ router.get("/", async (req, res) => {
   }
 });
 
-// delete one entry via id
 router.delete('/:id', async(req, res) => {
     try {
         await Entry.deleteOne({ _id: req.params.id })
         res.status(204).send()
     } catch {
         res.status(404)
-        res.send({ error: "Entry does not exist!" })
+        res.send({ error: "Eintrag existiert nicht." })
     }
 });
 
