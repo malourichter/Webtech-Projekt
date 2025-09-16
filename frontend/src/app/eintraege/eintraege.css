@@ -3,6 +3,8 @@
     border: none;
     border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    margin-bottom: 30px;
+    padding: -10px;
 }
 .custom{
     background-color: white;
@@ -78,4 +80,13 @@
     border-radius: 15px;
     width: 25%;
     color: white;
+}
+.mood-name {
+    font-weight: bold;
+    font-size: 35px;
+    font-family: Inter, sans serif
+}
+.eintraege-headline{
+    font-weight: bold;
+    font-family: Inter, sans serif;
 }

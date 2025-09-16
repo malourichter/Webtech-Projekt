@@ -20,14 +20,11 @@ export class Eintraege implements OnInit {
   ngOnInit() {
     const userId = localStorage.getItem('userId');
     this.http.get<any[]>('http://localhost:3000/entry').subscribe(data => {
-      this.entries = data.filter((entry: any) => {
-        if (entry.userId && typeof entry.userId === 'object' && entry.userId._id) {
-            return entry.userId._id === userId;
-          }
-          return entry.userId?.toString() === userId;
-        });
-        this.cdr.detectChanges();
-      });
+      this.entries = data
+        .filter(entry => entry.userId === userId)
+        .sort((a, b) => new Date(b.datum).getTime() - new Date(a.datum).getTime());
+      this.cdr.detectChanges();
+    });
   }
 
   deleteEntry(entryId: string) {

@@ -17,7 +17,7 @@ export class Notizen {
 
   saveEntry() {
   const userId = localStorage.getItem('userId') || '';
-  const mood = { name: localStorage.getItem('mood') || '' };
+const mood = { name: localStorage.getItem('mood') || '', image: localStorage.getItem('moodImage') || '' };
   const habits = JSON.parse(localStorage.getItem('habits') || '[]');
   const datum = new Date();
   const uhrzeit = new Date().toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' });
@@ -39,6 +39,7 @@ export class Notizen {
   }, { headers }).subscribe({
     next: () => {
       localStorage.removeItem('mood');
+      localStorage.removeItem('moodImage');
       localStorage.removeItem('habits');
       localStorage.removeItem('notizen');
       

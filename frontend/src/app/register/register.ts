@@ -20,7 +20,7 @@ name: string = '';
 constructor(private http: HttpClient, private router: Router) {}
 
    registerUser() {
-    // Felder prüfen
+  
     if (!this.name || !this.email || !this.password) {
       this.error = 'Bitte alle Felder ausfüllen!';
       return;

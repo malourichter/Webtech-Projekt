@@ -5,166 +5,62 @@
             <div class="card p-4" id="gefuehle">
                 <h2>Gefühle</h2>
                 <div class="d-flex gap-3 mt-3 ms-4 me-4" id="gefuehle-icons">
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Aufgeregt" [ngClass]="{'active': isActive('Aufgeregt')}" (click)="toggleActive('Aufgeregt')">
-                            <img src="images/Aufgeregt.png" alt="Aufgeregt"></button>
-                        <h6 class="mt-2">Aufgeregt</h6>
-                    </div>
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Dankbar" [ngClass]="{'active': isActive('Dankbar')}" (click)="toggleActive('Dankbar')">
-                            <img src="images/Dankbar.png" alt="Dankbar"></button>
-                        <h6 class="mt-2">Dankbar</h6>
-                    </div>
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Zufrieden" [ngClass]="{'active': isActive('Zufrieden')}" (click)="toggleActive('Zufrieden')">
-                            <img src="images/Zufrieden.png" alt="Zufrieden"></button>
-                        <h6 class="mt-2">Zufrieden</h6>
-                    </div>
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Gestresst" [ngClass]="{'active': isActive('Gestresst')}" (click)="toggleActive('Gestresst')">
-                            <img src="images/Gestresst.png" alt="Gestresst"></button>
-                        <h6 class="mt-2">Gestresst</h6>
-                    </div>
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Traurig" [ngClass]="{'active': isActive('Traurig')}" (click)="toggleActive('Traurig')">
-                            <img src="images/Traurig.png" alt="Traurig"></button>
-                        <h6 class="mt-2">Traurig</h6>
-                    </div>
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Wütend" [ngClass]="{'active': isActive('Wütend')}" (click)="toggleActive('Wütend')">
-                            <img src="images/Wütend.png" alt="Wütend">
+                    <div class="emoji" *ngFor="let habit of gefuehleHabits">
+                        <button class="emoji-btn" [ngClass]="{'active': isActive(habit)}" (click)="toggleActive(habit)">
+                            <img [src]="'images/' + habit.image" [alt]="habit.name">
                         </button>
-                        <h6 class="mt-2">Wütend</h6>
+                        <h6 class="mt-2">{{ habit.name }}</h6>
                     </div>
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Glücklich" [ngClass]="{'active': isActive('Glücklich')}" (click)="toggleActive('Glücklich')">
-                            <img src="images/Glücklich.png" alt="Glücklich"></button>
-                        <h6 class="mt-2">Glücklich</h6>
-                    </div>
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Müde" [ngClass]="{'active': isActive('Müde')}" (click)="toggleActive('Müde')">
-                            <img src="images/Müde.png" alt="Müde"></button>
-                        <h6 class="mt-2">Müde</h6>
-                    </div>
+                
                 </div>
             </div>
-
-
             <div class="card p-4" id="schlaf">
                 <h2>Schlaf</h2>
                 <div class="d-flex mt-3 ms-4 me-4" id="schlaf-icons">
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Gut" [ngClass]="{'active': isActive('Gut')}" (click)="toggleActive('Gut')">
-                            <img src="images/Gut.Schlaf.png" alt="Gut Schlaf"> </button>
-                        <h6 class="mt-2">Guter Schlaf</h6>
-                    </div>
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Mäßig" [ngClass]="{'active': isActive('Mäßig')}" (click)="toggleActive('Mäßig')">
-                            <img src="images/Mäßig.png" alt="Mäßig Schlaf"></button>
-                        <h6 class="mt-2">Mäßiger Schlaf</h6>
-                    </div>
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Schlecht" [ngClass]="{'active': isActive('Schlecht')}" (click)="toggleActive('Schlecht')">
-                            <img src="images/Schlecht.Schlaf.png" alt="Schlecht Schlaf"></button>
-                        <h6 class="mt-2">Schlechter Schlaf</h6>
+                    <div class="emoji" *ngFor="let habit of schlafHabits">
+                        <button class="emoji-btn" [ngClass]="{'active': isActive(habit)}" (click)="toggleActive(habit)">
+                            <img [src]="'images/' + habit.image" [alt]="habit.name">
+                        </button>
+                        <h6 class="mt-2">{{ habit.name }}</h6>
                     </div>
                 </div>
             </div>
-
             <div class="card p-4" id="sozial">
                 <h2>Sozial</h2>
                 <div class="d-flex mt-3 ms-4 me-4" id="sozial-icons">
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Freunde" [ngClass]="{'active': isActive('Freunde')}" (click)="toggleActive('Freunde')">
-                            <img src="images/Freunde.png" alt="Freunde"> </button>
-                        <h6 class="mt-2">Freunde</h6>
-                    </div>
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Familie" [ngClass]="{'active': isActive('Familie')}" (click)="toggleActive('Familie')">
-                            <img src="images/Familie.png" alt="Familie"> </button>
-                        <h6 class="mt-2">Familie</h6>
-                    </div>
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Partner" [ngClass]="{'active': isActive('Partner')}" (click)="toggleActive('Partner')">
-                            <img src="images/Partner.png" alt="Partner"> </button>
-                        <h6 class="mt-2">Partner</h6>
-                    </div>
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Alleine" [ngClass]="{'active': isActive('Alleine')}" (click)="toggleActive('Alleine')">
-                            <img src="images/Alleine.png" alt="Alleine"> </button>
-                        <h6 class="mt-2">Alleine</h6>
+                    <div class="emoji" *ngFor="let habit of sozialHabits">
+                        <button class="emoji-btn" [ngClass]="{'active': isActive(habit)}" (click)="toggleActive(habit)">
+                            <img [src]="'images/' + habit.image" [alt]="habit.name">
+                        </button>
+                        <h6 class="mt-2">{{ habit.name }}</h6>
                     </div>
                 </div>
             </div>
             <div class="card p-4" id="schule">
                 <h2>Schule</h2>
                 <div class="d-flex mt-3 ms-4 me-4" id="schule-icons">
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Lernen" [ngClass]="{'active': isActive('Lernen')}" (click)="toggleActive('Lernen')">
-                            <img src="images/Lernen.png" alt="Lernen"> </button>
-                        <h6 class="mt-2">Lernen</h6>
-                    </div>
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Hausaufgaben" [ngClass]="{'active': isActive('Hausaufgaben')}" (click)="toggleActive('Hausaufgaben')">
-                            <img src="images/Hausaufgaben.png" alt="Hausaufgaben"> </button>
-                        <h6 class="mt-2">Hausaufgaben</h6>
-                    </div>
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Prüfung" [ngClass]="{'active': isActive('Prüfung')}" (click)="toggleActive('Prüfung')">
-                            <img src="images/Prüfung.png" alt="Prüfung"> </button>
-                        <h6 class="mt-2">Prüfung</h6>
-                    </div>
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Gruppenarbeit" [ngClass]="{'active': isActive('Gruppenarbeit')}" (click)="toggleActive('Gruppenarbeit')">
-                            <img src="images/Gruppenarbeit.png" alt="Gruppenarbeit"> </button>
-                        <h6 class="mt-2">Gruppenarbeit</h6>
+                    <div class="emoji" *ngFor="let habit of schuleHabits">
+                        <button class="emoji-btn" [ngClass]="{'active': isActive(habit)}" (click)="toggleActive(habit)">
+                            <img [src]="'images/' + habit.image" [alt]="habit.name">
+                        </button>
+                        <h6 class="mt-2">{{ habit.name }}</h6>
                     </div>
                 </div>
             </div>
             <div class="card p-4" id="hobbys">
                 <h2>Hobbys</h2>
                 <div class="d-flex mt-3 ms-4 me-4" id="hobbys-icons">
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Spielen" [ngClass]="{'active': isActive('Spielen')}" (click)="toggleActive('Spielen')">
-                            <img src="images/Spielen.png" alt="Spielen"> </button>
-                        <h6 class="mt-2">Spielen</h6>
-                    </div>
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Malen" [ngClass]="{'active': isActive('Malen')}" (click)="toggleActive('Malen')">
-                            <img src="images/Malen.png" alt="Malen"> </button>
-                        <h6 class="mt-2">Malen</h6>
-                    </div>
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Musik" [ngClass]="{'active': isActive('Musik')}" (click)="toggleActive('Musik')">
-                            <img src="images/Musik.png" alt="Musik"> </button>
-                        <h6 class="mt-2">Musik</h6>
-                    </div>
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Filme" [ngClass]="{'active': isActive('Filme')}" (click)="toggleActive('Filme')">
-                            <img src="images/Filme.png" alt="Filme"> </button>
-                        <h6 class="mt-2">Filme</h6>
-                    </div>
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Lesen" [ngClass]="{'active': isActive('Lesen')}" (click)="toggleActive('Lesen')">
-                            <img src="images/Lesen.png" alt="Lesen"> </button>
-                        <h6 class="mt-2">Lesen</h6>
-                    </div>
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Training" [ngClass]="{'active': isActive('Training')}" (click)="toggleActive('Training')">
-                            <img src="images/Trainieren.png" alt="Training"> </button>
-                        <h6 class="mt-2">Training</h6>
-                    </div>
-                    <div class="emoji">
-                        <button class="emoji-btn" data-emoji="Spazieren" [ngClass]="{'active': isActive('Spazieren')}" (click)="toggleActive('Spazieren')">
-                            <img src="images/Laufen.png" alt="Spazieren"> </button>
-                        <h6 class="mt-2">Spazieren</h6>
+                    <div class="emoji" *ngFor="let habit of hobbysHabits">
+                        <button class="emoji-btn" [ngClass]="{'active': isActive(habit)}" (click)="toggleActive(habit)">
+                            <img [src]="'images/' + habit.image" [alt]="habit.name">
+                        </button>
+                        <h6 class="mt-2">{{ habit.name }}</h6>
                     </div>
                 </div>
             </div>
             <div class="d-flex justify-content-center mt-1">
                 <button class="btn btn-primary btn-lg px-5" (click)="saveHabits()">Weiter</button>
             </div>
-
         </div>
    
 

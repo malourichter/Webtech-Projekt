@@ -22,7 +22,7 @@ router.delete('/user/:id', async(req, res) => {
         res.status(204).send()
     } catch {
         res.status(404)
-        res.send({ error: "Member does not exist!" })
+        res.send({ error: "Benutzer existiert nicht." })
     }
 });
 

@@ -22,8 +22,8 @@ export class Mood implements OnInit {
     this.userId = localStorage.getItem('userId') || '';
   }
 
-  selectMood(mood: string) {
-    this.selectedMood = mood;
-    localStorage.setItem('mood', mood);
-  }
+  selectMood(mood: { name: string, image: string }) {
+  localStorage.setItem('mood', mood.name);
+  localStorage.setItem('moodImage', mood.image);
+}
 }
