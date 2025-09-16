@@ -24,6 +24,46 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Eintrag aktualisieren
+router.put('/:id', async (req, res) => {
+  try {
+    const updatedEntry = await Entry.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+    if (!updatedEntry) {
+      return res.status(404).json({ error: "Eintrag nicht gefunden." });
+    }
+    res.json(updatedEntry);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+router.patch('/:id', async(req, res) => {
+    try {
+        const entry = await Entry.findOne({ _id: req.params.id });
+
+        if (req.body.mood) {
+            entry.mood = req.body.mood
+        }
+
+        if (req.body.habits) {
+            entry.habits = req.body.habits
+        }
+
+        if (req.body.notizen) {
+            entry.notizen = req.body.notizen
+        }
+
+        await entry.save();
+    res.json(entry);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 router.delete('/:id', async(req, res) => {
     try {
         await Entry.deleteOne({ _id: req.params.id })
