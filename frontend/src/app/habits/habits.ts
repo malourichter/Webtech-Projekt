@@ -25,9 +25,7 @@ export class Habits {
     return this.selectedHabits.includes(habit);
   }
 
-
   saveHabits() {
-   
     localStorage.setItem('habits', JSON.stringify(this.selectedHabits));
     this.router.navigate(['/notizen']);
   }
