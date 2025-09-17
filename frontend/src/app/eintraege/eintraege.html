@@ -22,7 +22,8 @@
       <div class="notiz-card" *ngIf="entry.notizen && entry.notizen.trim() !== ''">
         {{ entry.notizen }}
       </div>
-      <div style="display: flex; justify-content: flex-end;">
+      <div style="display: flex; justify-content: flex-end; gap:20px;">
+        <button class="btn bearbeiten-btn" (click)="openEditDialog(entry)">Bearbeiten</button>
     <button class="btn btn-danger" (click)="openConfirmDialog(entry._id)">
       Löschen
     </button>
@@ -30,6 +31,22 @@
 </div>
     </div>
 </div>
+
+<div *ngIf="showEditDialog" class="edit-dialog-backdrop">
+  <div class="edit-dialog card">
+    <h2>Eintrag bearbeiten</h2>
+    <div class="card-body">
+    <div class="form-group">
+      <textarea id="notizen" class="form-control" rows="5" [(ngModel)]="selectedEntry.notizen" name="notizen"></textarea>
+    </div>
+    <div class="dialoge-buttons">
+      <button class="btn abbrechen-btn1" (click)="closeEditDialog()">Abbrechen</button>
+      <button class="btn speichern-btn" (click)="saveEdits()">Speichern</button>
+    </div>
+  </div>
+</div>
+</div>
+//test
 
 <div *ngIf="showConfirmDialog" class="confirm-dialog-backdrop">
   <div class="confirm-dialog">

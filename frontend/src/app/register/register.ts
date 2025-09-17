@@ -33,7 +33,8 @@ constructor(private http: HttpClient, private router: Router) {}
     }).subscribe({
       next: data => {
         this.error = '';
-        this.router.navigate(['/login']);
+        localStorage.setItem('name', this.name);
+        this.router.navigate(['/mood']);
       },
       error: err => {
         this.error = err.error?.message || 'Registrierung fehlgeschlagen!';

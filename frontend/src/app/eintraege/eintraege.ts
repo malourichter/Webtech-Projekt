@@ -54,4 +54,30 @@ confirmDelete() {
     this.closeConfirmDialog();
   }
 }
+selectedEntry: any = null;
+showEditDialog = false;
+entryToEdit: any = null;
+
+
+openEditDialog(entry: any) {
+  this.selectedEntry = { ...entry };
+  this.showEditDialog = true;
+
+}
+closeEditDialog() {
+  this.showEditDialog = false;
+  this.selectedEntry = null;
+}
+saveEdits() {
+  if (this.selectedEntry) {
+  this.http.patch(`http://localhost:3000/entry/${this.selectedEntry._id}`, this.selectedEntry).subscribe((updatedEntry: any) => {
+      const idx = this.entries.findIndex(e => e._id === this.selectedEntry._id);
+    if (idx > -1) {
+      this.entries[idx] = { ...updatedEntry };
+    }
+    this.closeEditDialog();
+    this.cdr.detectChanges();
+  });
+}
+}
 }

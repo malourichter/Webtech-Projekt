@@ -90,3 +90,45 @@
     font-weight: bold;
     font-family: Inter, sans serif;
 }
+.bearbeiten-btn {
+    background-color: #F4A5DF;
+    border: none;
+    border-radius: 15px;
+    margin-top: 10px;
+    color: white;
+}
+.edit-dialog-backdrop {
+    position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;    
+  background: rgba(0,0,0,0.3);
+}
+.edit-dialog {
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  border: none;
+}
+.abbrechen-btn1 {
+    background-color: #F4A5DF;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    width: 25%;
+    margin-top: 10px;
+}
+.speichern-btn {
+    background-color: #4422CC;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    width: 25%;
+    margin-top: 10px;
+}
