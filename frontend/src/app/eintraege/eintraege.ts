@@ -15,6 +15,41 @@ import { HttpClient } from '@angular/common/http';
 })
 export class Eintraege implements OnInit {
   entries: any[] = [];
+  moods = [
+    { name: 'Super', image: 'Super.png' },
+    { name: 'Gut', image: 'Gut.png' },
+    { name: 'Okay', image: 'Okay.png' },
+    { name: 'Schlecht', image: 'Schlecht.png' },
+    { name: 'Furchtbar', image: 'Furchtbar.png' }
+  ];
+  allHabits = [
+    { name: 'Alleine', image:'Alleine.png'},
+    { name: 'Freunde', image: 'Freunde.png' },
+    { name: 'Familie', image: 'Familie.png' },
+    { name: 'Partner', image: 'Partner.png' },
+    { name: 'Aufgeregt', image: 'Aufgeregt.png' },
+    { name: 'Glücklich', image: 'Glücklich.png' },
+    { name: 'Dankbar', image: 'Dankbar.png' },
+    { name: 'Filme', image: 'Filme.png' },
+    { name: 'Gestresst', image: 'Gestresst.png' },
+    { name: 'Gruppenarbeit', image: 'Gruppenarbeit.png' },
+    { name: 'Gut', image: 'Gut.Schlaf.png'},
+    { name: 'Hausaufgaben', image: 'Hausaufgaben.png' },
+    { name: 'Laufen', image: 'Laufen.png' },
+    { name: 'Lernen', image: 'Lernen.png' },
+    { name: 'Lesen', image: 'Lesen.png' },
+    { name: 'Malen', image: 'Malen.png' },
+    { name: 'Mäßig', image: 'Mäßig.png' },
+    { name: 'Müde', image: 'Müde.png' },
+    { name: 'Prüfung', image: 'Prüfung.png'},
+    { name: 'Schlecht', image: 'Schlecht.Schlaf.png'},
+    { name: 'Spielen', image: 'Spielen.png' },
+    { name: 'Training', image: 'Trainieren.png' },
+    { name: 'Zufrieden', image: 'Zufrieden.png' },
+    { name: 'Musik', image: 'Musik.png' },
+    { name: 'Traurig', image: 'Traurig.png' },
+    { name: 'Wütend', image: 'Wütend.png' }
+  ];
   constructor(private http: HttpClient,private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
@@ -80,4 +115,16 @@ saveEdits() {
   });
 }
 }
+  toggleHabit(habit: any) {
+    const idx = this.selectedEntry.habits.findIndex((h: any) => h.name === habit.name);
+    if (idx > -1) {
+      this.selectedEntry.habits.splice(idx, 1);
+    } else {
+      this.selectedEntry.habits.push(habit);
+    }
+  }
+  hasHabit(habit: { name: string; image: string }): boolean {
+  return this.selectedEntry?.habits?.some((h: any) => h.name === habit.name) ?? false;
+}
+
 }
