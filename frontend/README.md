@@ -44,10 +44,12 @@ Journaly ist eine simple Tagebuch-Webanwendung für jeden, der sein tägliches L
 
 ![Übersicht](screenshots/üebrsicht.png)
 
-**Nutzung von KI**
-- benutzte KI-Tools: ChatGPT, GitHub Copilot  
+**Bearbeiten von Einträgen**
+![Bearbeiten](screenshots/bearbeiten.png)
 
-Die KI-Tools wurden ausschließlich bei Fragen bzw. Erläuterungen zum Code, sowie zur Code-Optimierung genutzt.
+**Löschen von Einträgen**
+![Löschen](screenshots/löschen.png)
+
 
 # Installation & Setup
 **Vorraussetzungen**
@@ -57,3 +59,14 @@ Die KI-Tools wurden ausschließlich bei Fragen bzw. Erläuterungen zum Code, sow
 - MongoDB Atlas Zugang  
 
 **Projekt klonen**
+
+git clone https://github.com/malourichter/Webtech-Projekt.git
+
+
+
+
+
+**Nutzung von KI**
+- benutzte KI-Tools: ChatGPT, GitHub Copilot  
+
+Die KI-Tools wurden ausschließlich bei Fragen bzw. Erläuterungen zum Code, sowie zur Code-Optimierung genutzt.

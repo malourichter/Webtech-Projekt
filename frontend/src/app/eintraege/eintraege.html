@@ -34,9 +34,40 @@
 
 <div *ngIf="showEditDialog" class="edit-dialog-backdrop">
   <div class="edit-dialog card">
-    <h2>Eintrag bearbeiten</h2>
+    <h2>Eintrag bearbeiten:</h2>
     <div class="card-body">
+       <div class="form-group">
+  <label><strong>Mood:</strong></label>
+  <div class="moods-list" style="display: flex; gap: 20px;">
+    <div
+      *ngFor="let mood of moods"
+      class="mood-card"
+      [class.selected]="selectedEntry.mood?.name === mood.name"
+      (click)="selectedEntry.mood = mood"
+      style="cursor: pointer; text-align: center;"
+    >
+      <img [src]="'images/' + mood.image" [alt]="mood.name" width="60">
+      <div>{{ mood.name }}</div>
+    </div>
+  </div>
+</div>
+     <div class="form-group">
+  <label><strong> Habits:</strong></label>
+  <div class="habits-list">
+    <div
+      *ngFor="let habit of allHabits"
+      class="habit-card"
+      [class.selected]="hasHabit(habit)"
+      (click)="toggleHabit(habit)"
+      style="cursor: pointer;"
+    >
+      {{ habit.name }}
+      <img [src]="'images/' + habit.image" [alt]="habit.name" width="20">
+    </div>
+  </div>
+</div>
     <div class="form-group">
+      <label><strong>Notizen:</strong></label>
       <textarea id="notizen" class="form-control" rows="5" [(ngModel)]="selectedEntry.notizen" name="notizen"></textarea>
     </div>
     <div class="dialoge-buttons">
