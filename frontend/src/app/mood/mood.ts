@@ -25,5 +25,6 @@ export class Mood implements OnInit {
   selectMood(mood: { name: string, image: string }) {
   localStorage.setItem('mood', mood.name);
   localStorage.setItem('moodImage', mood.image);
+
 }
 }

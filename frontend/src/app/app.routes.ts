@@ -5,15 +5,16 @@ import { Mood } from './mood/mood';
 import { Habits } from './habits/habits';
 import { Notizen } from './notizen/notizen';
 import { Eintraege } from './eintraege/eintraege';
+import { AuthGuard } from './auth.guard';
 
 
 export const routes: Routes = [
     { path: '', component: Login }, 
     { path: 'login', component: Login },
     { path: 'register', component: Register },
-    { path: 'mood', component: Mood},
-    { path: 'habits', component: Habits},
-    { path: 'notizen', component: Notizen},
-    { path: 'eintraege', component: Eintraege },
+    { path: 'mood', component: Mood, canActivate: [AuthGuard] },
+    { path: 'habits', component: Habits,canActivate: [AuthGuard] },
+    { path: 'notizen', component: Notizen, canActivate: [AuthGuard]},
+    { path: 'eintraege', component: Eintraege, canActivate: [AuthGuard] },
 ];
 

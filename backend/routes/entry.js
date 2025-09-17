@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Entry = require('../models/entry');
 
+
 // Eintrag erstellen
 router.post("/", async (req, res) => {
   try {

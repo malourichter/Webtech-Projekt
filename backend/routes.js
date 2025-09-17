@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 const User = require("./models/user.js");
 const Entry = require("./models/entry.js");
+const authMiddleware = require('./middleware/auth');
 
 router.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
@@ -16,7 +17,7 @@ router.post('/register', async (req, res) => {
   res.status(201).send({ message: 'Nutzer erfolgreich registriert.' });
 });
 
-router.delete('/user/:id', async(req, res) => {
+router.delete('/user/:id', authMiddleware, async(req, res) => {
     try {
         await User.deleteOne({ _id: req.params.id }) 
         res.status(204).send()
@@ -26,7 +27,7 @@ router.delete('/user/:id', async(req, res) => {
     }
 });
 
-router.get('/user', async (req, res) => {
+router.get('/user', authMiddleware, async (req, res) => {
   try {
     const allUsers = await User.find();
     console.log(allUsers);
@@ -35,6 +36,9 @@ router.get('/user', async (req, res) => {
     console.error(err);
     res.status(500).json({ error: "Fehler beim Abrufen der Benutzer" });
   }
+});
+router.get('/admin-check', authMiddleware, (req, res) => {
+  res.status(200).json({ message: 'Du bist als Admin eingeloggt!' });
 });
 
 

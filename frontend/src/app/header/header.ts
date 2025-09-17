@@ -13,6 +13,11 @@ logout() {
   localStorage.removeItem('name');
   localStorage.removeItem('userId');
   localStorage.removeItem('token');
+  localStorage.removeItem('mood');
+  localStorage.removeItem('moodImage');
+  localStorage.removeItem('habits');
+  localStorage.removeItem('notizen');
+  localStorage.removeItem('isAdmin');
   this.router.navigate(['/']);
 }
 }
