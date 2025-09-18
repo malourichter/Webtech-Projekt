@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const Entry = require('../models/entry');
-
+const authMiddleware = require('../middleware/auth');
+const adminMiddleware = require('../middleware/admin');
 
 // Eintrag erstellen
-router.post("/", async (req, res) => {
+router.post("/", authMiddleware, async (req, res) => {
   try {
     console.log(req.body);
     const { userId, mood, habits, notizen, datum } = req.body;
@@ -16,17 +17,30 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.get("/", async (req, res) => {
+// Einträge des eingeloggten Nutzers abrufen
+router.get("/me", authMiddleware, async (req, res) => {
   try {
-    const entries = await Entry.find();
+    const entries = await Entry.find({ userId: req.user.id });
     res.json(entries);
   } catch (err) {
     res.status(500).json({ error: "Fehler beim Abrufen der Einträge" });
   }
 });
 
+
+// Einträge aller Nutzer einsehen (nur als Admin)
+router.get("/all", adminMiddleware, async (req, res) => {
+  try {
+    const entries = await Entry.find({});
+    res.json(entries);
+  } catch (err) {
+    res.status(500).json({ error: "Fehler beim Abrufen der Einträge" });
+  }
+});
+
+
 // Eintrag aktualisieren
-router.put('/:id', async (req, res) => {
+router.put('/:id', authMiddleware, async (req, res) => {
   try {
     const updatedEntry = await Entry.findByIdAndUpdate(
       req.params.id,
@@ -42,24 +56,30 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-router.patch('/:id', async(req, res) => {
-    try {
-        const entry = await Entry.findOne({ _id: req.params.id });
+// Einträge bearbeiten
+router.patch('/:id', authMiddleware, async (req, res) => {
+  try {
+    const { mood, habits, notizen } = req.body;
+    const updates = {};
 
-        if (req.body.mood) {
-            entry.mood = req.body.mood
-        }
+    if (mood) updates.mood = mood;
+    if (habits) updates.habits = habits;
+    if (notizen) updates.notizen = notizen;
 
-        if (req.body.habits) {
-            entry.habits = req.body.habits
-        }
+    const entry = await Entry.findByIdAndUpdate(
+      req.params.id,
+      { $set: updates },
+      { new: true, runValidators: true }
+    );
 
-        if (req.body.notizen) {
-            entry.notizen = req.body.notizen
-        }
+    if (!entry) {
+      return res.status(404).json({ message: 'Eintrag nicht gefunden' });
+    }
 
-        await entry.save();
-    res.json(entry);
+    res.status(200).json({
+      message: 'Eintrag erfolgreich aktualisiert',
+      entry
+    });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

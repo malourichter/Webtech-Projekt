@@ -3,7 +3,7 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 const User = require("./models/user.js");
 const Entry = require("./models/entry.js");
-const authMiddleware = require('./middleware/auth');
+const authMiddleware = require('./middleware/admin.js');
 
 router.post('/register', async (req, res) => {
   const { name, email, password } = req.body;

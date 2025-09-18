@@ -50,23 +50,27 @@ export class Eintraege implements OnInit {
     { name: 'Traurig', image: 'Traurig.png' },
     { name: 'Wütend', image: 'Wütend.png' }
   ];
-  constructor(private http: HttpClient,private cdr: ChangeDetectorRef) {}
-
-  ngOnInit() {
-    const userId = localStorage.getItem('userId');
-    this.http.get<any[]>('http://localhost:3000/entry').subscribe(data => {
-      this.entries = data
-        .filter(entry => entry.userId === userId)
-        .sort((a, b) => new Date(b.datum).getTime() - new Date(a.datum).getTime());
-      this.cdr.detectChanges();
-    });
-  }
+  constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
+ngOnInit() {
+  this.http.get<any[]>('http://localhost:3000/entry/me', {
+    headers: {
+      Authorization: 'Bearer ' + localStorage.getItem('token')
+    }
+  }).subscribe(data => {
+    this.entries = data
+      .sort((a, b) => new Date(b.datum).getTime() - new Date(a.datum).getTime());
+      this.cdr.detectChanges(); 
+  });
+}
 
   deleteEntry(entryId: string) {
-    this.http.delete(`http://localhost:3000/entry/${entryId}`).subscribe(() => {
-      this.entries = this.entries.filter(entry => entry._id !== entryId);
-      this.cdr.detectChanges();
-    });
+  this.http.delete(`http://localhost:3000/entry/${entryId}`, {
+    headers: {
+      Authorization: 'Bearer ' + localStorage.getItem('token')
+    }
+  }).subscribe(() => {
+    this.entries = this.entries.filter(entry => entry._id !== entryId);
+  });
 }
 
 showConfirmDialog = false;
@@ -104,16 +108,23 @@ closeEditDialog() {
   this.selectedEntry = null;
 }
 saveEdits() {
-  if (this.selectedEntry) {
-  this.http.patch(`http://localhost:3000/entry/${this.selectedEntry._id}`, this.selectedEntry).subscribe((updatedEntry: any) => {
+  if (this.selectedEntry && this.selectedEntry._id) {
+    this.http.patch(
+      `http://localhost:3000/entry/${this.selectedEntry._id}`,
+      this.selectedEntry,
+      {
+        headers: {
+          Authorization: 'Bearer ' + localStorage.getItem('token')
+        }
+      }
+    ).subscribe((updatedEntry: any) => {
       const idx = this.entries.findIndex(e => e._id === this.selectedEntry._id);
-    if (idx > -1) {
-      this.entries[idx] = { ...updatedEntry };
-    }
-    this.closeEditDialog();
-    this.cdr.detectChanges();
-  });
-}
+      if (idx > -1) {
+        this.entries[idx] = { ...updatedEntry };
+      }
+      this.closeEditDialog();
+    });
+  }
 }
   toggleHabit(habit: any) {
     const idx = this.selectedEntry.habits.findIndex((h: any) => h.name === habit.name);
