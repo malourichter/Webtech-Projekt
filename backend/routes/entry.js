@@ -15,7 +15,7 @@ router.post("/", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-
+//Eintrag auslesen
 router.get("/", async (req, res) => {
   try {
     const entries = await Entry.find();
@@ -41,7 +41,7 @@ router.put('/:id', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-
+// Einzelne Komponenten eines Eintrages aktualisieren
 router.patch('/:id', async(req, res) => {
     try {
         const entry = await Entry.findOne({ _id: req.params.id });
@@ -64,7 +64,7 @@ router.patch('/:id', async(req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-
+// Löschen von Einträgen mittels ID
 router.delete('/:id', async(req, res) => {
     try {
         await Entry.deleteOne({ _id: req.params.id })

@@ -5,6 +5,7 @@ const User = require("./models/user.js");
 const Entry = require("./models/entry.js");
 const authMiddleware = require('./middleware/auth');
 
+//Registrierung eines neuen Nutzers
 router.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
   const existingUser = await User.findOne({ email });
@@ -16,7 +17,7 @@ router.post('/register', async (req, res) => {
   await user.save();
   res.status(201).send({ message: 'Nutzer erfolgreich registriert.' });
 });
-
+// Löschen eines Nutzers mittels ID
 router.delete('/user/:id', authMiddleware, async(req, res) => {
     try {
         await User.deleteOne({ _id: req.params.id }) 
@@ -26,7 +27,7 @@ router.delete('/user/:id', authMiddleware, async(req, res) => {
         res.send({ error: "Benutzer existiert nicht." })
     }
 });
-
+// Auslesen aller Nutzer für Admins
 router.get('/user', authMiddleware, async (req, res) => {
   try {
     const allUsers = await User.find();
@@ -37,6 +38,7 @@ router.get('/user', authMiddleware, async (req, res) => {
     res.status(500).json({ error: "Fehler beim Abrufen der Benutzer" });
   }
 });
+// Admin-Check
 router.get('/admin-check', authMiddleware, (req, res) => {
   res.status(200).json({ message: 'Du bist als Admin eingeloggt!' });
 });

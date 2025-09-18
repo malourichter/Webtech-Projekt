@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-mood',
@@ -14,6 +15,8 @@ export class Mood implements OnInit {
   userId: string = '';
   userName: string = '';
 
+constructor(private router: Router) {}
+
   ngOnInit() {
     const now = new Date();
     this.userName = localStorage.getItem('name') || '';
@@ -26,5 +29,8 @@ export class Mood implements OnInit {
   localStorage.setItem('mood', mood.name);
   localStorage.setItem('moodImage', mood.image);
 
+}
+goToEintraege() {
+  this.router.navigate(['/eintraege']);
 }
 }

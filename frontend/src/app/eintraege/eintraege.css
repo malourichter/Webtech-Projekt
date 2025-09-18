@@ -47,6 +47,10 @@
     margin-top: 10px;
     width: 10%;
 }
+.btn-danger:active{
+    background-color: #4422CC; 
+    color: white;
+}
 .dialoge-buttons {
     display: flex;
     justify-content: center;
@@ -97,6 +101,10 @@
     margin-top: 10px;
     color: white;
 }
+.bearbeiten-btn:active{
+    background-color:#F4A5DF;
+    color: white;
+}
 .edit-dialog-backdrop {
     position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -112,9 +120,11 @@
   border-radius: 30px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   padding: 2rem;
-  max-width: 500px;
+  max-width: 800px;
   width: 100%;
   border: none;
+  max-height: 80vh;
+    overflow-y: auto;
 }
 .abbrechen-btn1 {
     background-color: #F4A5DF;
@@ -131,4 +141,34 @@
     border-radius: 15px;
     width: 25%;
     margin-top: 10px;
+}
+.plus-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #4422CC;
+    color: white;
+    font-size: 2.5rem;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+}
+.habit-card.selected {
+    border: none;
+    background-color: #e0d7ff;
+}
+.mood-card.selected {
+  border: none;
+  background-color: #e0d7ff;
+  border-radius: 15px;
 }
