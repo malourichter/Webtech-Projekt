@@ -34,7 +34,7 @@ constructor(private http: HttpClient, private router: Router) {}
       next: data => {
         this.error = '';
         localStorage.setItem('name', this.name);
-        this.router.navigate(['/mood']);
+        this.router.navigate(['/login']);
       },
       error: err => {
         this.error = err.error?.message || 'Registrierung fehlgeschlagen!';
