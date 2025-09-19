@@ -1,8 +1,8 @@
 .card { 
-    background-color: #F1EDFF;
+    background-color: rgba(241, 237, 255, 0.6);
     border: none;
     border-radius: 30px;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
     margin-bottom: 30px;
     padding: -10px;
 }
@@ -171,6 +171,11 @@
   
     
 }
+.plus-btn:hover {
+    background-color: #6c47ff;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
 .plus-symbol {
     line-height: 1;
     font-family: Inter, sans-serif;
@@ -186,4 +191,24 @@
   border: none;
   background-color: #e0d7ff;
   border-radius: 15px;
+}
+.form1-bg {
+    position: fixed;
+    top: 75px;       
+    left: -50px;
+   width: 52vw;    
+    height: auto;
+      z-index: -1;
+      filter: blur(9px);
+      
+       
+}
+.form2-bg {
+  position: fixed;
+  right: 0;
+  bottom: 0;       
+  width: 57vw;
+  height: auto;
+  z-index: -2;
+  filter: blur(9px);
 }

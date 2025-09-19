@@ -38,12 +38,13 @@ p {
 }
 
 .card {
-    background: #F4A5DF;  
+    background:rgba(244, 165, 223, 0.2);
     min-height: 580px;
     border-radius: 30px;
     padding: 20px;
     margin-top: -27px;
     border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 #anmelden {
@@ -55,26 +56,37 @@ p {
 .link-black {
     color: black !important;
     text-decoration: underline;
+    
+
 }
 .form1-bg {
     position: absolute;
-    top: 80px;       
+    top: 75px;       
     left: -50px;
-   width: 50vw;    
+   width: 52vw;    
     height: auto;
       z-index: -1;
+      filter: blur(9px);
+      
+       
 }
 .form2-bg {
   position: absolute;
   right: 0;
   bottom: 0;       
-  width: 55vw;
+  width: 57vw;
   height: auto;
   z-index: -2;
+  filter: blur(9px);
 }
 .container {
   padding-left: 60px;  
   padding-right: 60px;
   max-width: 100%; 
 }
-
+#anmelden:hover {
+    background-color: #6c47ff;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+}

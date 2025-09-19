@@ -3,8 +3,9 @@
     background: #F1EDFF;
     border-radius: 30px;
     border:none;
-    box-shadow: 6px 6px rgba(0, 0, 0, 0.300); 
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin-bottom: 20px;
+    background: rgba(241, 237, 255, 0.5);
 }
 p {
     font-family: Inter, sans serif;
@@ -18,9 +19,8 @@ h1 {
     text-align: center;
     padding: 10px;
     font-size:50px;
-   
-    
-    
+   margin-top: -10px;
+
 }
 .datum {
     font-family: Inter, sans serif;
@@ -46,7 +46,7 @@ a {
 }
 .goto-eintraege-btn {
   position: fixed;
-  bottom: 30px;
+  bottom: 75px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
@@ -57,9 +57,34 @@ a {
   color: white;
   font-size: 1.2rem;
   border: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.form1-bg {
+    position: absolute;
+    top: 75px;       
+    left: -50px;
+   width: 52vw;    
+    height: auto;
+      z-index: -1;
+      filter: blur(15px);
+      
+}
+.form2-bg {
+  position: absolute;
+  right: 0;
+  bottom: 0;       
+  width: 57vw;
+  height: auto;
+  z-index: -2;
+  filter: blur(15px);
+}
+.goto-eintraege-btn:hover {
+     background-color: #6c47ff;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
 }
