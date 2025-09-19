@@ -25,6 +25,15 @@ constructor(private http: HttpClient, private router: Router) {}
       this.error = 'Bitte alle Felder ausfüllen!';
       return;
     }
+     const pw = this.password;
+  const hasMinLength = pw.length >= 8;
+  const hasLetter = /[A-Za-z]/.test(pw);
+  const hasNumber = /[0-9]/.test(pw);
+
+  if (!hasMinLength || !hasLetter || !hasNumber) {
+    this.error = 'Das Passwort muss mindestens 8 Zeichen lang sein und Buchstaben sowie Zahlen enthalten!';
+    return;
+  }
 
     this.http.post<any>('http://localhost:3000/register', {
       name: this.name,
