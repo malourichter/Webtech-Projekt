@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ChangeDetectorRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -50,7 +51,7 @@ export class Eintraege implements OnInit {
     { name: 'Traurig', image: 'Traurig.png' },
     { name: 'Wütend', image: 'Wütend.png' }
   ];
-  constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
+  constructor(private http: HttpClient, private cdr: ChangeDetectorRef, private router: Router) {}
 ngOnInit() {
   this.http.get<any[]>('http://localhost:3000/entry/me', {
     headers: {
@@ -141,5 +142,7 @@ saveEdits() {
   hasHabit(habit: { name: string; image: string }): boolean {
   return this.selectedEntry?.habits?.some((h: any) => h.name === habit.name) ?? false;
 }
-
+goToMood() {
+  this.router.navigate(['/mood']); 
+}
 }
