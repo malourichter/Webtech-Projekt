@@ -43,13 +43,18 @@
 .btn-danger {
     background-color: #4422CC;
     border: none;
-    border-radius: 20px;
+    border-radius: 15px;
     margin-top: 10px;
     width: 10%;
 }
 .btn-danger:active{
     background-color: #4422CC; 
     color: white;
+}
+.btn-danger:hover{
+    background-color: #6c47ff; 
+    color: white;
+    cursor: pointer;
 }
 .dialoge-buttons {
     display: flex;
@@ -104,6 +109,11 @@
 .bearbeiten-btn:active{
     background-color:#F4A5DF;
     color: white;
+}
+.bearbeiten-btn:hover{
+    background-color:#ff7fe1;
+    color: white;
+    cursor: pointer;
 }
 .edit-dialog-backdrop {
     position: fixed;
