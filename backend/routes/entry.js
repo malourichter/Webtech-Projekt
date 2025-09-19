@@ -8,8 +8,8 @@ const adminMiddleware = require('../middleware/admin');
 router.post("/", authMiddleware, async (req, res) => {
   try {
     console.log(req.body);
-    const { mood, habits, notizen, datum } = req.body;
-    const newEntry = new Entry({ userId: req.user.id, mood, habits, notizen, datum });
+    const { userId, mood, habits, notizen, datum } = req.body;
+    const newEntry = new Entry({ userId, mood, habits, notizen, datum });
     await newEntry.save();
     res.status(201).json({ message: "Eintrag gespeichert." });
   } catch (err) {

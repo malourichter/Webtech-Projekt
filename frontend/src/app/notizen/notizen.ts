@@ -30,7 +30,6 @@ const mood = { name: localStorage.getItem('mood') || '', image: localStorage.get
   localStorage.setItem('notizen', this.notiz);
 
   this.http.post<any>('http://localhost:3000/entry', {
-    userId,
     mood,
     habits,
     notizen: this.notiz,
