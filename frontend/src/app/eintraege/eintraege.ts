@@ -70,6 +70,7 @@ ngOnInit() {
     }
   }).subscribe(() => {
     this.entries = this.entries.filter(entry => entry._id !== entryId);
+    this.cdr.detectChanges(); 
   });
 }
 
@@ -117,12 +118,15 @@ saveEdits() {
           Authorization: 'Bearer ' + localStorage.getItem('token')
         }
       }
-    ).subscribe((updatedEntry: any) => {
-      const idx = this.entries.findIndex(e => e._id === this.selectedEntry._id);
+    ).subscribe((response: any) => {
+      // Das Backend gibt { message, entry } zurück
+      const updatedEntry = response.entry;
+      const idx = this.entries.findIndex(e => e._id === updatedEntry._id);
       if (idx > -1) {
-        this.entries[idx] = { ...updatedEntry };
+        this.entries[idx] = updatedEntry;
       }
       this.closeEditDialog();
+      this.cdr.detectChanges();
     });
   }
 }
