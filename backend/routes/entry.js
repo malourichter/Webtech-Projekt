@@ -85,7 +85,7 @@ router.patch('/:id', authMiddleware, async (req, res) => {
   }
 });
 
-router.delete('/:id', async(req, res) => {
+router.delete('/:id', authMiddleware, async(req, res) => {
     try {
         await Entry.deleteOne({ _id: req.params.id })
         res.status(204).send()

@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 const User = require("./models/user.js");
 const Entry = require("./models/entry.js");
 const authMiddleware = require('./middleware/admin.js');
+const adminMiddleware = require('./middleware/admin.js');
 
 router.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
@@ -17,7 +18,7 @@ router.post('/register', async (req, res) => {
   res.status(201).send({ message: 'Nutzer erfolgreich registriert.' });
 });
 
-router.delete('/user/:id', authMiddleware, async(req, res) => {
+router.delete('/user/:id', authMiddleware, adminMiddleware, async(req, res) => {
     try {
         await User.deleteOne({ _id: req.params.id }) 
         res.status(204).send()
@@ -27,7 +28,7 @@ router.delete('/user/:id', authMiddleware, async(req, res) => {
     }
 });
 
-router.get('/user', authMiddleware, async (req, res) => {
+router.get('/user', authMiddleware, adminMiddleware, async (req, res) => {
   try {
     const allUsers = await User.find();
     console.log(allUsers);

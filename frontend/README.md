@@ -32,7 +32,7 @@ Journaly ist eine simple Tagebuch-Webanwendung für jeden, der sein tägliches L
 
 **Gewohnheiten**
 
-![Gewohnheiten](screenshots/gewohnheite1.png)
+![Gewohnheiten](screenshots/gewohnheiten1.png)
 
 ![Gewohnheiten](screenshots/gewohnheiten2.png)
 
@@ -42,7 +42,7 @@ Journaly ist eine simple Tagebuch-Webanwendung für jeden, der sein tägliches L
 
 **Übersicht der Einträge**
 
-![Übersicht](screenshots/üebrsicht.png)
+![Übersicht](screenshots/uebersicht.png)
 
 **Bearbeiten von Einträgen**
 ![Bearbeiten](screenshots/bearbeiten.png)
@@ -61,9 +61,6 @@ Journaly ist eine simple Tagebuch-Webanwendung für jeden, der sein tägliches L
 **Projekt klonen**
 
 git clone https://github.com/malourichter/Webtech-Projekt.git
-
-
-
 
 
 **Nutzung von KI**

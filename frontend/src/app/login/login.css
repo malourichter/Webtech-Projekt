@@ -5,9 +5,23 @@ h1 {
     font-size: 55px;
     
 }
+.Titel {
+    font-size: 70px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 2px; }
+    
 .nowrap {
     white-space: nowrap; 
 }
+hr {
+  border: none;
+  border-top: 2px solid #000000;
+  width: 90%;
+}
+
 p {
     margin-top:10px;
     font-family: 'Inter', sans-serif;
