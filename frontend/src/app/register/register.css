@@ -34,12 +34,11 @@ p {
     margin-top: 10px;
 }
 .cat-img {
-    position: fixed;          
-    bottom: 0;                   
-    left: 150px;                 
+    position: relative;          
+    bottom: -10px;                   
+    left: 70px;                 
     width: 400px;                
     height: auto;
-    z-index: 10;
 }
 
 .form1-bg {
