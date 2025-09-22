@@ -8,7 +8,8 @@ const adminMiddleware = require('../middleware/admin');
 router.post("/", authMiddleware, async (req, res) => {
   try {
     console.log(req.body);
-    const { userId, mood, habits, notizen, datum } = req.body;
+    const { mood, habits, notizen, datum } = req.body;
+    const userId = req.user.id; // userId aus dem Token 
     const newEntry = new Entry({ userId, mood, habits, notizen, datum });
     await newEntry.save();
     res.status(201).json({ message: "Eintrag gespeichert." });
@@ -29,7 +30,7 @@ router.get("/me", authMiddleware, async (req, res) => {
 
 
 // Einträge aller Nutzer einsehen (nur als Admin)
-router.get("/all", adminMiddleware, async (req, res) => {
+router.get("/all", authMiddleware, adminMiddleware, async (req, res) => {
   try {
     const entries = await Entry.find({});
     res.json(entries);
@@ -39,22 +40,6 @@ router.get("/all", adminMiddleware, async (req, res) => {
 });
 
 
-// Eintrag aktualisieren
-router.put('/:id', authMiddleware, async (req, res) => {
-  try {
-    const updatedEntry = await Entry.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true }
-    );
-    if (!updatedEntry) {
-      return res.status(404).json({ error: "Eintrag nicht gefunden." });
-    }
-    res.json(updatedEntry);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
 
 // Einträge bearbeiten
 router.patch('/:id', authMiddleware, async (req, res) => {
@@ -66,8 +51,8 @@ router.patch('/:id', authMiddleware, async (req, res) => {
     if (habits) updates.habits = habits;
     if (notizen) updates.notizen = notizen;
 
-    const entry = await Entry.findByIdAndUpdate(
-      req.params.id,
+    const entry = await Entry.findOneAndUpdate(
+      { _id: req.params.id, userId: req.user.id }, // Nur eigene Einträge bearbeiten
       { $set: updates },
       { new: true, runValidators: true }
     );
@@ -85,13 +70,16 @@ router.patch('/:id', authMiddleware, async (req, res) => {
   }
 });
 
+// Einträge löschen
 router.delete('/:id', authMiddleware, async(req, res) => {
     try {
-        await Entry.deleteOne({ _id: req.params.id })
-        res.status(204).send()
-    } catch {
-        res.status(404)
-        res.send({ error: "Eintrag existiert nicht." })
+        const result = await Entry.deleteOne({ _id: req.params.id, userId: req.user.id }); // Nur eigene Einträge löschen
+        if (result.deletedCount === 0) {
+            return res.status(404).json({ error: "Eintrag existiert nicht oder gehört nicht Ihnen." });
+        }
+        res.status(204).send();
+    } catch (err) {
+        res.status(500).json({ error: err.message });
     }
 });
 

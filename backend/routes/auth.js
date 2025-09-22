@@ -17,7 +17,8 @@ router.post('/login', async (req, res) => {
   const userWithoutPassword = {
     id: user.id,
     name: user.name,
-    email: user.email
+    email: user.email,
+     isAdmin: user.isAdmin
   };
   const token = jwt.sign(userWithoutPassword, JWT_SECRET, { expiresIn: '1d' });
   res.status(200).send({ token, user: userWithoutPassword });

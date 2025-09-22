@@ -21,7 +21,7 @@ app.use('/entry', entryRoutes);
 const authRouter = require('./routes/auth');
 app.use('/auth', authRouter);
 
-mongoose.connect('mongodb+srv://dbUser:journal456@journal.iba5pu7.mongodb.net', { dbName: 'members' });
+mongoose.connect(process.env.DB_CONNECTION, { dbName: 'members' });
 const db = mongoose.connection;
 db.on('error', err => {
   console.log(err);
