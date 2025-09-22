@@ -75,9 +75,7 @@ Journaly ist eine simple Tagebuch-Webanwendung für jeden, der sein tägliches L
 Erstelle im Ordner backend eine Datei namens .env mit folgendem Inhalt. **Bitte trage deine Werte von MongoDB ein:**
 ```
 DB_CONNECTION=<deine eigene MongoDB-Verbindungs-URL>
-DATABASE= members
 JWT_SECRET=<dein eigenes geheimes JWT-Passwort>
-PORT=3000
 ```
 `node server.js`
 
@@ -90,4 +88,4 @@ PORT=3000
 **Nutzung von KI**
 - benutzte KI-Tools: ChatGPT, GitHub Copilot  
 
-Die KI-Tools wurden ausschließlich bei Fragen bzw. Erläuterungen zum Code, sowie zur Code-Optimierung genutzt.
+Die KI-Tools wurden bei Fragen bzw. Erläuterungen zum Code, sowie zur Code-Optimierung genutzt.
