@@ -91,7 +91,3 @@ PORT=3000
 - benutzte KI-Tools: ChatGPT, GitHub Copilot  
 
 Die KI-Tools wurden ausschließlich bei Fragen bzw. Erläuterungen zum Code, sowie zur Code-Optimierung genutzt.
-
-
-
-Die KI-Tools wurden ausschließlich bei Fragen bzw. Erläuterungen zum Code, sowie zur Code-Optimierung genutzt.
