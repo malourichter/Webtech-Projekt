@@ -20,35 +20,35 @@ Journaly ist eine simple Tagebuch-Webanwendung für jeden, der sein tägliches L
 
 **Start-/Loginpage**
 
-![Start-/Loginpage](./screenshots/startseite.png)
+![Start-/Loginpage](frontend/screenshots/startseite.png)
 
 **Registrierungspage**
 
-![Registrierungspage](./screenshots/registrierung.png)
+![Registrierungspage](frontend/screenshots/registrierung.png)
 
 **Launen-Auswahl**
 
-![Launenpage](screenshots/launen.png)
+![Launenpage](frontend/screenshots/launen.png)
 
 **Gewohnheiten**
 
-![Gewohnheiten](./screenshots/gewohnheiten1.png)
+![Gewohnheiten](frontend/screenshots/gewohnheiten1.png)
 
-![Gewohnheiten](./screenshots/gewohnheiten2.png)
+![Gewohnheiten](frontend/screenshots/gewohnheiten2.png)
 
 **Notiz-Feld**
 
-![Notizen](./screenshots/notizen.png)
+![Notizen](frontend/screenshots/notizen.png)
 
 **Übersicht der Einträge**
 
-![Übersicht](./screenshots/uebersicht.png)
+![Übersicht](frontend/screenshots/uebersicht.png)
 
 **Bearbeiten von Einträgen**
-![Bearbeiten](./screenshots/bearbeiten.png)
+![Bearbeiten](frontend/screenshots/bearbeiten.png)
 
 **Löschen von Einträgen**
-![Löschen](./screenshots/löschen.png)
+![Löschen](frontend/screenshots/löschen.png)
 
 
 # Installation & Setup
