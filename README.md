@@ -20,11 +20,11 @@ Journaly ist eine simple Tagebuch-Webanwendung für jeden, der sein tägliches L
 
 **Start-/Loginpage**
 
-![Start-/Loginpage](screenshots/startseite.png)
+![Start-/Loginpage](./screenshots/startseite.png)
 
 **Registrierungspage**
 
-![Registrierungspage](screenshots/registrierung.png)
+![Registrierungspage](./screenshots/registrierung.png)
 
 **Launen-Auswahl**
 
@@ -32,23 +32,23 @@ Journaly ist eine simple Tagebuch-Webanwendung für jeden, der sein tägliches L
 
 **Gewohnheiten**
 
-![Gewohnheiten](screenshots/gewohnheiten1.png)
+![Gewohnheiten](./screenshots/gewohnheiten1.png)
 
-![Gewohnheiten](screenshots/gewohnheiten2.png)
+![Gewohnheiten](./screenshots/gewohnheiten2.png)
 
 **Notiz-Feld**
 
-![Notizen](screenshots/notizen.png)
+![Notizen](./screenshots/notizen.png)
 
 **Übersicht der Einträge**
 
-![Übersicht](screenshots/uebersicht.png)
+![Übersicht](./screenshots/uebersicht.png)
 
 **Bearbeiten von Einträgen**
-![Bearbeiten](screenshots/bearbeiten.png)
+![Bearbeiten](./screenshots/bearbeiten.png)
 
 **Löschen von Einträgen**
-![Löschen](screenshots/löschen.png)
+![Löschen](./screenshots/löschen.png)
 
 
 # Installation & Setup
@@ -91,3 +91,4 @@ PORT=3000
 - benutzte KI-Tools: ChatGPT, GitHub Copilot  
 
 Die KI-Tools wurden ausschließlich bei Fragen bzw. Erläuterungen zum Code, sowie zur Code-Optimierung genutzt.
+
