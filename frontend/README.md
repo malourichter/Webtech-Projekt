@@ -1,5 +1,5 @@
 # Journaly
-Journaly ist eine simple Tagebuch-Webanwendung für jeden, der sein tägliches Leben festhalten möchte. Benutzer:innen können nach erfolgreicher Registration Ihre Laune und Gewohnheiten überschaubar dokumentieren.
+Journaly ist eine simple Tagebuch-Webanwendung für jeden, der sein tägliches Leben festhalten möchte. Benutzer:innen können nach erfolgreicher Registration Ihre Laune und Gewohnheiten überschaubar dokumentieren, bearbeiten und bei Bedarf löschen.
 
 ## Mögliche Funktionen
 - Erstellung eines Nutzers
@@ -7,13 +7,13 @@ Journaly ist eine simple Tagebuch-Webanwendung für jeden, der sein tägliches L
 - Tracking von Gewohnheiten
 - Textfeld zum Erstellen von Notizen
 - strukturierte Übersicht von Einträgen
+- Bearbeiten und Löschen von bestehenden Einträgen
   
 ## Technologien
 - **Frontend:** Angular
 - **Backend:** Node.js
 - **Datenbank:** MongoDB(Atlas)
 - **CSS-Framework:** Bootstrap
-- **Deployment:**
 
 
 ## Screenshots der Anwendung
@@ -58,10 +58,34 @@ Journaly ist eine simple Tagebuch-Webanwendung für jeden, der sein tägliches L
 - Bootstrap
 - MongoDB Atlas Zugang  
 
-**Projekt klonen**
+**1. Projekt klonen**
 
-git clone https://github.com/malourichter/Webtech-Projekt.git
+`git clone https://github.com/malourichter/Webtech-Projekt.git`
 
+`cd Webtech-Projekt`
+
+**2. Backend starten**
+
+`cd backend`  
+
+`npm install`
+
+**2.1 Umgebungsvariable einrichten**
+
+Erstelle im Ordner backend eine Datei namens .env mit folgendem Inhalt. **Bitte trage deine Werte von MongoDB ein:**
+```
+DB_CONNECTION=<deine eigene MongoDB-Verbindungs-URL>
+DATABASE= members
+JWT_SECRET=<dein eigenes geheimes JWT-Passwort>
+PORT=3000
+```
+`node server.js`
+
+**3. Frontend starten**  
+`cd ../frontend`  
+
+`npm install`  
+`ng serve`
 
 **Nutzung von KI**
 - benutzte KI-Tools: ChatGPT, GitHub Copilot  
