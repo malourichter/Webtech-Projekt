@@ -35,11 +35,13 @@ p {
     margin-top: 10px;
 }
 .cat-img {
-    position: fixed;          
-    bottom: 0;                   
-    left: 150px;                 
+    position: relative;          
+    bottom: -10px;                   
+    left: 70px;                 
     width: 400px;                
-    height: auto; }
+    height: auto;
+
+}
 
 #email-input {
     padding: 16px;
