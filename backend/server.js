@@ -22,11 +22,11 @@ const authRouter = require('./routes/auth');
 app.use('/auth', authRouter);
 
 
-if (!process.env.DB_CONNECTION) {
-  console.error('FEHLER: DB_CONNECTION ist nicht in der .env-Datei definiert!');
-  console.error('Bitte kopiere .env.example zu .env und fülle die Werte aus.');
-  process.exit(1);
-}
+// if (!process.env.DB_CONNECTION) {
+// console.error('FEHLER: DB_CONNECTION ist nicht in der .env-Datei definiert!');
+ // console.error('Bitte trage den Wert in die .env-Datei ein.');
+ // process.exit(1);
+//}
 
 mongoose.connect(process.env.DB_CONNECTION, { dbName: 'members' });
 const db = mongoose.connection;
