@@ -6,11 +6,11 @@ const jwt = require('jsonwebtoken');
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
-//if (!JWT_SECRET) {
- // console.error('FEHLER: JWT_SECRET ist nicht in der .env-Datei definiert!');
- // console.error('Bitte trage den Wert in die .env-Datei ein.');
- // process.exit(1);
-//}
+if (!JWT_SECRET) {
+  console.error('FEHLER: JWT_SECRET ist nicht in der .env-Datei definiert!');
+ console.error('Bitte trage den Wert in die .env-Datei ein.');
+ process.exit(1);
+}
 
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
